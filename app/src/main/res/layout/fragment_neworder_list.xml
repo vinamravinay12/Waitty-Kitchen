@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.waitty.kitchen.fragment.NewOrderListFragment"/>
+
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/Cordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorTransparent">
+
+        <LinearLayout
+            android:id="@+id/layLinFocus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp">
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/SwipeRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rcvItem"
+                    android:clipToPadding="false"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </android.support.v4.widget.SwipeRefreshLayout>
+
+            <TextView
+                android:id="@+id/txtNoRecord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:text="@string/txt_no_neworder"
+                android:textColor="@color/colorNextWelcome"
+                android:textSize="@dimen/_12ssp"
+                android:padding="@dimen/_10sdp"
+                android:drawableTop="@mipmap/bell_icon"
+                android:drawablePadding="@dimen/_12sdp"
+                android:fontFamily="@font/p_medium"/>
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/btnRefresh"
+                android:layout_below="@+id/txtNoRecord"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                style="@style/material_button_round"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_8ssp"
+                android:fontFamily="@font/p_semibold"
+                android:text="@string/txt_refresh"
+                android:textColor="@color/colorWhite"
+                android:backgroundTint="@color/colorAlmostDone"
+                android:paddingStart="@dimen/_35sdp"
+                android:paddingEnd="@dimen/_35sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"/>
+
+        </RelativeLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>

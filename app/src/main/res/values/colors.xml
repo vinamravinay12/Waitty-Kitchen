@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorTransparent">#00FFFFFF</color>
+    <color name="colorYallowGradiantButton">#FFD800</color>
+    <color name="colorYallowGradiantBackground">#FFCE00</color>
+    <color name="colorYallow">#FFE200</color>
+    <color name="colorNextWelcome">#292323</color>
+    <color name="colorSkipWelcome">#777670</color>
+    <color name="colorValidation">#EE3131</color>
+    <color name="colorCardProfile">#F8F8F8</color>
+    <color name="colorEdtHint">#C9C8C1</color>
+    <color name="colorSubmenuUnselected">#4C4F53</color>
+    <color name="colorCircleImageShadow">#30000000</color>
+    <color name="colorDishPrice">#999999</color>
+    <color name="colorAlmostDone">#53534C</color>
+    <color name="colorStatusBackground">#212c4a</color>
+    <color name="colorOrderKitchen">#3aa1ed</color>
+    <color name="colorOrderReady">#42ac00</color>
+    <color name="colorETA">#e2e2e2</color>
+    <color name="colorOrderTabEmpty">#F0F0F0</color>
+</resources>

@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">Tiffin Kitchen</string>
+
+    <!--EXTRA-->
+    <string name="digit_alpha">abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="digit_number">0123456789</string>
+    <string name="digit_alpha_number">abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</string>
+    <string name="check_network">No Internet Connection!</string>
+    <string name="try_again">Something went wrong Please try again later.</string>
+    <string name="ok">OK</string>
+    <string name="no_data">Data not available</string>
+    <string name="wait">Please wait...</string>
+    <string name="na">NA</string>
+    <string name="permission">It seems that some permission for Tiffin Kitchen has not granted. Please give all the required permission to enjoy Tiffin Kitchen features.</string>
+    <string name="txt_write_external_storage">Write External Storage</string>
+    <string name="txt_camera">Camera</string>
+    <string name="txt_grant_access">You need to grant access to</string>
+    <string name="txt_settings">Settings</string>
+    <string name="txt_dismiss">Dismiss</string>
+    <string name="txt_notifications">Notifications</string>
+    <string name="session_expire">Session Expire</string>
+    <string name="session_expire_msg">Your login session is expire, Please login again.</string>
+    <string name="block_admin">Block by Admin</string>
+    <string name="block_admin_msg">Sorry! your account blocked by admin.</string>
+    <string name="update">Update</string>
+    <string name="later">Later</string>
+
+    <!--LOGIN SCREEN-->
+    <string name="txt_signin">Sign in</string>
+    <string name="txt_kitchen_id">Kitchen ID</string>
+    <string name="txt_password">Password</string>
+    <string name="kitchenid_length">Kitchen ID is too short.</string>
+    <string name="password_length">Password is too short.</string>
+
+    <!--HOME SCREEN-->
+    <string name="txt_order_status">Order Status</string>
+    <string name="back_msg">Please click BACK again to exit.</string>
+    <string name="txt_new">New</string>
+    <string name="txt_preparing">Preparing</string>
+    <string name="txt_no_neworder">No new orders yet</string>
+    <string name="txt_no_preparingorder">No preparing orders yet</string>
+    <string name="txt_refresh">Refresh</string>
+    <string name="txt_dinein">Dine in</string>
+    <string name="txt_take_away">Take Away</string>
+    <string name="txt_start_preparing">Start Preparing</string>
+    <string name="txt_done">Done</string>
+    <string name="txt_waiter_id_hash">Waiter ID#</string>
+    <string name="txt_table_no">Table No.</string>
+    <string name="txt_t">T</string>
+    <string name="txt_alert">Alert</string>
+    <string name="txt_order_done">Order Done</string>
+    <string name="txt_order_done_msg">Are you sure all dishes are ready?</string>
+    <string name="txt_eta">ETA:</string>
+    <string name="txt_minutes">Minutes</string>
+    <string name="text_outofstock">Out of Stock</string>
+    <string name="text_time_over">Time Over</string>
+
+    <!--PROFILE SCREEN-->
+    <string name="txt_logout">Logout</string>
+    <string name="logout_msg">Are you sure want to logout?</string>
+    <string name="txt_cancel">Cancel</string>
+    <string name="txt_profile">Profile</string>
+    <string name="txt_privacy_policy">Privacy Policy</string>
+    <string name="terms_con_settings">Terms &amp; Conditions</string>
+    <string name="text_kitchenid">kitchen Id-</string>
+
+</resources>
