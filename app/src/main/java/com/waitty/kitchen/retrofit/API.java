@@ -1,6 +1,7 @@
 package com.waitty.kitchen.retrofit;
 
 public class API {
+    public static final int NETWORK_ERROR = 404;
     public static final int OTHER_FAILED = 422;
     public static final int SESSION_EXPIRE = 401;
     public static final int BLOCK_ADMIN = 403;
@@ -39,4 +40,16 @@ public class API {
     public static final String ORDER_ID= "orderId";
     public static final String ORDER_ARRIVING_TIME= "order_arriving_time";
 
+    //LOGIN response
+    public static final String USER_ID = "id";
+    public static final String PARENT_ID = "parentId";
+    public static final String COUNTRYCODE = "country_code";
+    public static final String EMAIL = "email";
+    public static final String MOBILE = "mobile";
+    public static final String KITCHEN_NAME = "name";
+    public static final String PROFILE_IMAGE = "profile_image";
+    public static final String KITCHEN_ID = "key";
+    public static final String RESTAURANT = "restaurant";
+
 }
+

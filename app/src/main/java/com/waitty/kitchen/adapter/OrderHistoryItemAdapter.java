@@ -1,41 +1,32 @@
 package com.waitty.kitchen.adapter;
 
 import android.content.Context;
-import android.databinding.DataBindingUtil;
-import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.waitty.kitchen.R;
-import com.waitty.kitchen.activity.HomeActivity;
-import com.waitty.kitchen.appinterface.getResponseData;
-import com.waitty.kitchen.constant.constant;
 import com.waitty.kitchen.databinding.AdapterOrderItemBinding;
-import com.waitty.kitchen.model.OrderDetails;
-import com.waitty.kitchen.retrofit.API;
-import com.waitty.kitchen.retrofit.APICall;
-import com.waitty.kitchen.retrofit.ApiClient;
-import com.waitty.kitchen.retrofit.ApiInterface;
+import com.waitty.kitchen.model.OrderItem;
 import com.waitty.kitchen.utility.Utility;
-import org.json.JSONObject;
+
 import java.util.List;
-import retrofit2.Call;
 
 public class OrderHistoryItemAdapter extends RecyclerView.Adapter<OrderHistoryItemAdapter.ViewHolder>{
 
-    private List<OrderDetails.OrderItem> dataList;
+    private List<OrderItem> dataList;
     private Context mContext;
     private LayoutInflater layoutInflater;
     private String paymentSymbol;
     private int orderType,mainItemPosition;
 
     // Class constructor
-    public OrderHistoryItemAdapter(Context context, List<OrderDetails.OrderItem> orderItems, String symbol, int tab,int itemPosition) {
+    public OrderHistoryItemAdapter(Context context, List<OrderItem> orderItems, String symbol, int tab, int itemPosition) {
         this.dataList = orderItems;
         this.paymentSymbol = symbol;
         this.orderType=tab;
@@ -55,7 +46,7 @@ public class OrderHistoryItemAdapter extends RecyclerView.Adapter<OrderHistoryIt
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        final OrderDetails.OrderItem data=dataList.get(position);
+        final OrderItem data=dataList.get(position);
 
         holder.adapterOrderItemBinding.txtName.setText(data.getDishDetails().getName());
         holder.adapterOrderItemBinding.txtQuantity.setText(String.valueOf(data.getQuantity()));
@@ -182,12 +173,12 @@ public class OrderHistoryItemAdapter extends RecyclerView.Adapter<OrderHistoryIt
 
     // Item done API
     private void itemDoneAPI(final int position, int itemID) {
-        try{
+     /*   try{
             JsonObject jsonObject=new JsonObject();
             jsonObject.addProperty(API.ORDER_ITEM_ID,itemID);
 
             ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
-            Call<JsonElement> call = apiInterface.doneOrderItem(jsonObject,Utility.getSharedPreferencesString(mContext, constant.USER_SECURITY_TOKEN));
+            Call<JsonElement> call = apiInterface.doneOrderItem(jsonObject,Utility.getSharedPreferencesString(mContext, WaittyConstants.USER_SECURITY_TOKEN));
             new APICall(mContext).Server_Interaction(call, new getResponseData() {
                 @Override
                 public void onSuccess(JSONObject OBJ, String msg, String typeAPI) {
@@ -204,7 +195,7 @@ public class OrderHistoryItemAdapter extends RecyclerView.Adapter<OrderHistoryIt
 
         }catch (Exception e){
             e.printStackTrace();
-        }
+        }*/
 
     }
 }

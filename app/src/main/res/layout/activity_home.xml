@@ -7,129 +7,125 @@
             name="activity"
             type="com.waitty.kitchen.activity.HomeActivity"/>
 
-        <variable
-            name="clickEvent"
-            type="com.waitty.kitchen.activity.HomeActivity.ClickHandler" />
+
     </data>
 
-    <android.support.design.widget.CoordinatorLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/Cordinator"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorStatusBackground">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical">-->
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbarActionbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="@dimen/_3sdp"
-                android:paddingBottom="@dimen/_3sdp"
-                android:elevation="@dimen/_3sdp"
-                android:background="@color/colorWhite">
+<!--            <android.support.v7.widget.Toolbar-->
+<!--                android:id="@+id/toolbarActionbar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingTop="@dimen/_3sdp"-->
+<!--                android:paddingBottom="@dimen/_3sdp"-->
+<!--                android:elevation="@dimen/_3sdp"-->
+<!--                android:background="@color/colorWhite">-->
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorNextWelcome"
-                    android:paddingStart="@dimen/_28sdp"
-                    android:gravity="center"
-                    android:textSize="@dimen/_14ssp"
-                    android:text="@string/txt_order_status"
-                    android:singleLine="true"
-                    android:ellipsize="end"
-                    android:fontFamily="@font/p_medium"/>
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textColor="@color/colorNextWelcome"-->
+<!--                    android:paddingStart="@dimen/_28sdp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:textSize="@dimen/_14ssp"-->
+<!--                    android:text="@string/txt_order_status"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:ellipsize="end"-->
+<!--                    android:fontFamily="@font/p_medium"/>-->
 
-            </android.support.v7.widget.Toolbar>
+<!--            </android.support.v7.widget.Toolbar>-->
 
-            <LinearLayout
-                android:id="@+id/tabLayoutMain"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_60sdp"
-                android:layout_marginEnd="@dimen/_60sdp"
-                android:padding="@dimen/_1sdp"
-                android:background="@drawable/status_tab_background"
-                android:weightSum="2">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/tabLayoutMain"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_marginTop="@dimen/_10sdp"-->
+<!--                android:layout_marginStart="@dimen/_60sdp"-->
+<!--                android:layout_marginEnd="@dimen/_60sdp"-->
+<!--                android:padding="@dimen/_1sdp"-->
+<!--                android:background="@drawable/status_tab_background"-->
+<!--                android:weightSum="2">-->
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1">-->
 
-                    <TextView
-                        android:onClick="@{clickEvent::txtNewOrderClick}"
-                        android:id="@+id/txtNewOrder"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/txt_new"
-                        android:paddingTop="@dimen/_5sdp"
-                        android:paddingBottom="@dimen/_5sdp"
-                        android:textSize="@dimen/_8ssp"
-                        android:fontFamily="@font/p_semibold"
-                        android:textColor="@color/colorNextWelcome"
-                        android:background="@drawable/round_selected_submenu"/>
+<!--                    <TextView-->
+<!--                        android:id="@+id/txtNewOrder"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center"-->
+<!--                        android:text="@string/txt_new"-->
+<!--                        android:paddingTop="@dimen/_5sdp"-->
+<!--                        android:paddingBottom="@dimen/_5sdp"-->
+<!--                        android:textSize="@dimen/_8ssp"-->
+<!--                        android:fontFamily="@font/p_semibold"-->
+<!--                        android:textColor="@color/colorNextWelcome"-->
+<!--                        android:background="@drawable/round_selected_submenu"/>-->
 
-                    <LinearLayout
-                        android:id="@+id/layLinCountNew"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:visibility="gone"
-                        android:orientation="horizontal">
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/layLinCountNew"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerInParent="true"-->
+<!--                        android:visibility="gone"-->
+<!--                        android:orientation="horizontal">-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/txt_new"
-                            android:textSize="@dimen/_9ssp"
-                            android:fontFamily="@font/p_semibold"
-                            android:textColor="@color/colorTransparent"
-                            android:background="@color/colorTransparent"/>
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/txt_new"-->
+<!--                            android:textSize="@dimen/_9ssp"-->
+<!--                            android:fontFamily="@font/p_semibold"-->
+<!--                            android:textColor="@color/colorTransparent"-->
+<!--                            android:background="@color/colorTransparent"/>-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_5sdp"
-                            android:layout_marginTop="@dimen/_minus5sdp"
-                            android:background="@drawable/circle_badge_count"
-                            android:padding="@dimen/_3sdp"/>
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="@dimen/_5sdp"-->
+<!--                            android:layout_marginTop="@dimen/_minus5sdp"-->
+<!--                            android:background="@drawable/circle_badge_count"-->
+<!--                            android:padding="@dimen/_3sdp"/>-->
 
-                    </LinearLayout>
+<!--                    </LinearLayout>-->
 
-                </RelativeLayout>
+<!--                </RelativeLayout>-->
 
-                <TextView
-                    android:onClick="@{clickEvent::txtPreparingOrderClick}"
-                    android:id="@+id/txtPreparingOrder"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:text="@string/txt_preparing"
-                    android:paddingTop="@dimen/_5sdp"
-                    android:paddingBottom="@dimen/_5sdp"
-                    android:textSize="@dimen/_8ssp"
-                    android:fontFamily="@font/p_medium"
-                    android:textColor="@color/colorNextWelcome"
-                    android:background="@color/colorTransparent"/>
+<!--                <TextView-->
+<!--                    android:id="@+id/txtPreparingOrder"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:text="@string/txt_preparing"-->
+<!--                    android:paddingTop="@dimen/_5sdp"-->
+<!--                    android:paddingBottom="@dimen/_5sdp"-->
+<!--                    android:textSize="@dimen/_8ssp"-->
+<!--                    android:fontFamily="@font/p_medium"-->
+<!--                    android:textColor="@color/colorNextWelcome"-->
+<!--                    android:background="@color/colorTransparent"/>-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
-            <android.support.v4.view.ViewPager
-                android:id="@+id/pager"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+<!--            <androidx.core.view.ViewPager-->
+<!--                android:id="@+id/pager"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"/>-->
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
-    </android.support.design.widget.CoordinatorLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </layout>

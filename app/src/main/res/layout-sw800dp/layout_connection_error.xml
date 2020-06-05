@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <import type="android.text.TextUtils" />
+        <variable
+            name="APIErrorVM"
+            type="com.waitty.kitchen.viewmodel.ApiErrorViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/error_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        progressVisibility="@{APIErrorVM.errorViewVisibility}">
+
+        <ImageView
+            android:id="@+id/ivErrorType"
+            android:layout_width="528dp"
+            android:layout_height="324dp"
+            android:layout_marginTop="228dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/connection_error"
+            imageSource="@{APIErrorVM.errorTypeImage}"/>
+
+        <TextView
+            android:id="@+id/tvErrorType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="373dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="369dp"
+            android:fontFamily="@font/bwnistageo_bold"
+            android:textColor="@color/colorTabItemTextSelected"
+            android:textSize="@dimen/_40sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivErrorType"
+            android:visibility="@{APIErrorVM.errorViewVisibility}"
+            android:text='@{APIErrorVM.errorType.intValue() > 0 ? context.getString(APIErrorVM.errorType) : ""}'
+            tools:text="@string/something_went_wrong" />
+
+        <TextView
+            android:id="@+id/tvErrorMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="@dimen/_25dp"
+            android:layout_marginEnd="100dp"
+            android:fontFamily="@font/bwnistageo_medium"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/_5dp"
+            android:text="@{APIErrorVM.errorMessage}"
+            android:textColor="@color/colorWaiterIdText"
+            android:textSize="@dimen/_22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvErrorType"
+            tools:text="You are offline!! Please try again!!" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

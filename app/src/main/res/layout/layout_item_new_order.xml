@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="orderItem"
+            type="com.waitty.kitchen.model.OrderItem" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvNewItemOrderCount"
+        android:layout_width="@dimen/_30dp"
+        android:layout_height="@dimen/_30dp"
+        android:layout_marginTop="@dimen/_10dp"
+        android:gravity="center"
+        android:background="@drawable/box_new_order_item_count"
+        android:text="@{String.valueOf(orderItem.quantity)}"
+
+        android:textSize="@dimen/_14sp"
+        android:textColor="@color/colorTabItemTextSelected"
+        android:fontFamily="@font/bwnistageo_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_30dp"
+        android:layout_marginStart="@dimen/_20dp"
+        android:layout_marginTop="@dimen/_10dp"
+        android:fontFamily="@font/bwnistageo_medium"
+        android:gravity="center"
+        android:text="x"
+        android:textColor="@color/colorTabItemTextSelected"
+        android:textSize="@dimen/_16sp"
+        app:layout_constraintStart_toEndOf="@+id/tvNewItemOrderCount"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNewOrderItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_30dp"
+        android:layout_marginStart="@dimen/_20dp"
+        android:layout_marginTop="@dimen/_10dp"
+        android:text="@{orderItem.dishDetails.name}"
+        android:gravity="center"
+        android:textSize="@dimen/_16sp"
+        android:textColor="@color/colorTabItemTextSelected"
+        android:fontFamily="@font/bwnistageo_medium"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

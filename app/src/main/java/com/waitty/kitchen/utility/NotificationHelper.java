@@ -5,7 +5,7 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.content.ContextWrapper;
 import com.waitty.kitchen.R;
-import com.waitty.kitchen.constant.constant;
+import com.waitty.kitchen.constant.WaittyConstants;
 
 public class NotificationHelper extends ContextWrapper {
 
@@ -16,9 +16,9 @@ public class NotificationHelper extends ContextWrapper {
         super(ctx);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            NotificationChannel chan1 = new NotificationChannel(constant.PRIMARY_CHANNEL, getString(R.string.txt_notifications), NotificationManager.IMPORTANCE_HIGH);
+            NotificationChannel chan1 = new NotificationChannel(WaittyConstants.PRIMARY_CHANNEL, getString(R.string.txt_notifications), NotificationManager.IMPORTANCE_HIGH);
             getManager().createNotificationChannel(chan1);
-            Utility.setSharedPreferencesBoolean(ctx, constant.IS_CHANNEL_PREPARED,true);
+          //  Utility.setSharedPreferencesBoolean(ctx, WaittyConstants.IS_CHANNEL_PREPARED,true);
         }
     }
 

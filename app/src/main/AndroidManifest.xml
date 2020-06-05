@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.waitty.kitchen">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,51 +14,43 @@
         android:icon="@mipmap/launcher_icon"
         android:label="@string/app_name"
         android:largeScreens="true"
-        android:xlargeScreens="true"
         android:roundIcon="@mipmap/launcher_icon_round"
         android:supportsRtl="true"
+        android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
-
-        <activity android:name=".activity.SplashActivity"
-            android:theme="@style/Theme.Transparent"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
+        android:xlargeScreens="true">
         <activity
-            android:name=".activity.BaseActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
+            android:name=".activity.HomeActivityNew"
+            android:label="@string/title_activity_home_new"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.SplashActivity"
+            android:theme="@style/Theme.Transparent" />
 
         <activity
             android:name=".activity.LoginActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-        <activity
-            android:name=".activity.HomeActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
 
         <activity
             android:name=".activity.ProfileActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" /> <!-- Push notification service -->
+        <!-- File path get provider from device -->
 
-        <!--Push notification service-->
-        <service android:name=".fcm.PushNotificationMessagingService">
+        <service
+            android:name=".fcm.WKNotificationMessagingService"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
-        <!-- File path get provider from device -->
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
             android:exported="false"
             android:grantUriPermissions="true">
@@ -65,7 +58,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
-
     </application>
 
 </manifest>

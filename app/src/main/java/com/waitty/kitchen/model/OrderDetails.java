@@ -1,11 +1,16 @@
 package com.waitty.kitchen.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.waitty.kitchen.utility.Utility;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class OrderDetails {
+public class OrderDetails implements Parcelable {
 
     @SerializedName("id")
     @Expose
@@ -103,6 +108,8 @@ public class OrderDetails {
     @SerializedName("waiter")
     @Expose
     private Waiter waiter;
+
+    private String orderEta;
 
     public int getId() {
         return id;
@@ -360,683 +367,105 @@ public class OrderDetails {
         this.waiter = waiter;
     }
 
-    public class City {
-
-        @SerializedName("id")
-        @Expose
-        private int id;
-        @SerializedName("name")
-        @Expose
-        private String name;
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public String getName() {
-            return Utility.checkNull(this.name);
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
+    public String getOrderEta() {
+        return orderEta;
     }
 
-    public class Country {
-
-        @SerializedName("id")
-        @Expose
-        private int id;
-        @SerializedName("name")
-        @Expose
-        private String name;
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public String getName() {
-            return Utility.checkNull(this.name);
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
+    public void setOrderEta(String orderEta) {
+        this.orderEta = orderEta;
     }
 
-    public class DishDetails {
-
-        @SerializedName("id")
-        @Expose
-        private int id;
-        @SerializedName("name")
-        @Expose
-        private String name;
-        @SerializedName("dish_image")
-        @Expose
-        private String dishImage;
-        @SerializedName("description")
-        @Expose
-        private String description;
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public String getName() {
-            return Utility.checkNull(this.name);
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getDishImage() {
-            return Utility.checkNull(this.dishImage);
-        }
-
-        public void setDishImage(String dishImage) {
-            this.dishImage = dishImage;
-        }
-
-        public String getDescription() {
-            return Utility.checkNull(this.description);
-        }
-
-        public void setDescription(String description) {
-            this.description = description;
-        }
-
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
-    public class OrderCustomizationDetails {
-
-        @SerializedName("id")
-        @Expose
-        private int id;
-        @SerializedName("name")
-        @Expose
-        private String name;
-        @SerializedName("type")
-        @Expose
-        private String type;
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public String getName() {
-            return Utility.checkNull(this.name);
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getType() {
-            return Utility.checkNull(this.type);
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.id);
+        dest.writeInt(this.userId);
+        dest.writeInt(this.tableId);
+        dest.writeString(this.orderType);
+        dest.writeDouble(this.total);
+        dest.writeDouble(this.tax);
+        dest.writeDouble(this.taxPercent);
+        dest.writeDouble(this.orderAmount);
+        dest.writeString(this.comment);
+        dest.writeString(this.createdAt);
+        dest.writeString(this.updatedAt);
+        dest.writeInt(this.restaurantId);
+        dest.writeInt(this.statusId);
+        dest.writeValue(this.isPaymentRefund);
+        dest.writeString(this.paymentRefundCategoryId);
+        dest.writeInt(this.waiterId);
+        dest.writeString(this.acceptDateTime);
+        dest.writeString(this.paymentId);
+        dest.writeString(this.transactionId);
+        dest.writeString(this.paymentSymbol);
+        dest.writeString(this.orderArrivingTime);
+        dest.writeString(this.orderArrivingTimeMinits);
+        dest.writeString(this.orderIdDisplay);
+        dest.writeInt(this.kitchenId);
+        dest.writeString(this.preparingDateTime);
+        dest.writeString(this.orderArrivingTimeUpdateAt);
+        dest.writeParcelable(this.table, flags);
+        dest.writeParcelable(this.user, flags);
+        dest.writeParcelable(this.restaurant, flags);
+        dest.writeParcelable(this.orderStatus, flags);
+        dest.writeList(this.orderItems);
+        dest.writeParcelable(this.waiter, flags);
+        dest.writeString(this.orderEta);
     }
 
-    public class OrderCustomizationOptionDetails {
-
-        @SerializedName("id")
-        @Expose
-        private int id;
-        @SerializedName("name")
-        @Expose
-        private String name;
-        @SerializedName("amount")
-        @Expose
-        private String amount;
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public String getName() {
-            return Utility.checkNull(this.name);
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getAmount() {
-            return Utility.checkNull(this.amount);
-        }
-
-        public void setAmount(String amount) {
-            this.amount = amount;
-        }
-
+    public OrderDetails() {
     }
 
-    public class OrderItem {
-        @SerializedName("in_stock")
-        @Expose
-        private int in_stock;
-        @SerializedName("id")
-        @Expose
-        private int id;
-        @SerializedName("quantity")
-        @Expose
-        private int quantity;
-        @SerializedName("dish_amount")
-        @Expose
-        private double dishAmount;
-        @SerializedName("dishId")
-        @Expose
-        private int dishId;
-        @SerializedName("orderId")
-        @Expose
-        private int orderId;
-        @SerializedName("created_at")
-        @Expose
-        private String createdAt;
-        @SerializedName("updated_at")
-        @Expose
-        private String updatedAt;
-        @SerializedName("is_prepared")
-        @Expose
-        private Boolean isPrepared;
-        @SerializedName("order_item_customizations")
-        @Expose
-        private List<OrderItemCustomization> orderItemCustomizations = null;
-        @SerializedName("dish_details")
-        @Expose
-        private DishDetails dishDetails;
-
-        public int getIn_stock() {
-            return in_stock;
-        }
-
-        public void setIn_stock(int in_stock) {
-            this.in_stock = in_stock;
-        }
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public int getQuantity() {
-            return quantity;
-        }
-
-        public void setQuantity(int quantity) {
-            this.quantity = quantity;
-        }
-
-        public double getDishAmount() {
-            return dishAmount;
-        }
-
-        public void setDishAmount(double dishAmount) {
-            this.dishAmount = dishAmount;
-        }
-
-        public int getDishId() {
-            return dishId;
-        }
-
-        public void setDishId(int dishId) {
-            this.dishId = dishId;
-        }
-
-        public int getOrderId() {
-            return orderId;
-        }
-
-        public void setOrderId(int orderId) {
-            this.orderId = orderId;
-        }
-
-        public String getCreatedAt() {
-            return Utility.checkNull(this.createdAt);
-        }
-
-        public void setCreatedAt(String createdAt) {
-            this.createdAt = createdAt;
-        }
-
-        public String getUpdatedAt() {
-            return Utility.checkNull(this.updatedAt);
-        }
-
-        public void setUpdatedAt(String updatedAt) {
-            this.updatedAt = updatedAt;
-        }
-
-        public Boolean getIsPrepared() {
-            return isPrepared;
-        }
-
-        public void setIsPrepared(Boolean isPrepared) {
-            this.isPrepared = isPrepared;
-        }
-
-        public List<OrderItemCustomization> getOrderItemCustomizations() {
-            return orderItemCustomizations;
-        }
-
-        public void setOrderItemCustomizations(List<OrderItemCustomization> orderItemCustomizations) {
-            this.orderItemCustomizations = orderItemCustomizations;
-        }
-
-        public DishDetails getDishDetails() {
-            return dishDetails;
-        }
-
-        public void setDishDetails(DishDetails dishDetails) {
-            this.dishDetails = dishDetails;
-        }
-
+    protected OrderDetails(Parcel in) {
+        this.id = in.readInt();
+        this.userId = in.readInt();
+        this.tableId = in.readInt();
+        this.orderType = in.readString();
+        this.total = in.readDouble();
+        this.tax = in.readDouble();
+        this.taxPercent = in.readDouble();
+        this.orderAmount = in.readDouble();
+        this.comment = in.readString();
+        this.createdAt = in.readString();
+        this.updatedAt = in.readString();
+        this.restaurantId = in.readInt();
+        this.statusId = in.readInt();
+        this.isPaymentRefund = (Boolean) in.readValue(Boolean.class.getClassLoader());
+        this.paymentRefundCategoryId = in.readString();
+        this.waiterId = in.readInt();
+        this.acceptDateTime = in.readString();
+        this.paymentId = in.readString();
+        this.transactionId = in.readString();
+        this.paymentSymbol = in.readString();
+        this.orderArrivingTime = in.readString();
+        this.orderArrivingTimeMinits = in.readString();
+        this.orderIdDisplay = in.readString();
+        this.kitchenId = in.readInt();
+        this.preparingDateTime = in.readString();
+        this.orderArrivingTimeUpdateAt = in.readString();
+        this.table = in.readParcelable(Table.class.getClassLoader());
+        this.user = in.readParcelable(User.class.getClassLoader());
+        this.restaurant = in.readParcelable(Restaurant.class.getClassLoader());
+        this.orderStatus = in.readParcelable(OrderStatus.class.getClassLoader());
+        this.orderItems = new ArrayList<OrderItem>();
+        in.readList(this.orderItems, OrderItem.class.getClassLoader());
+        this.waiter = in.readParcelable(Waiter.class.getClassLoader());
+        this.orderEta = in.readString();
     }
 
-    public class OrderItemCustomization {
-
-        @SerializedName("id")
-        @Expose
-        private int id;
-        @SerializedName("orderItemId")
-        @Expose
-        private int orderItemId;
-        @SerializedName("customizationId")
-        @Expose
-        private int customizationId;
-        @SerializedName("order_item_customizations_options")
-        @Expose
-        private List<OrderItemCustomizationsOption> orderItemCustomizationsOptions = null;
-        @SerializedName("order_customization_details")
-        @Expose
-        private OrderCustomizationDetails orderCustomizationDetails;
-
-        public int getId() {
-            return id;
+    public static final Parcelable.Creator<OrderDetails> CREATOR = new Parcelable.Creator<OrderDetails>() {
+        @Override
+        public OrderDetails createFromParcel(Parcel source) {
+            return new OrderDetails(source);
         }
 
-        public void setId(int id) {
-            this.id = id;
+        @Override
+        public OrderDetails[] newArray(int size) {
+            return new OrderDetails[size];
         }
-
-        public int getOrderItemId() {
-            return orderItemId;
-        }
-
-        public void setOrderItemId(int orderItemId) {
-            this.orderItemId = orderItemId;
-        }
-
-        public int getCustomizationId() {
-            return customizationId;
-        }
-
-        public void setCustomizationId(int customizationId) {
-            this.customizationId = customizationId;
-        }
-
-        public List<OrderItemCustomizationsOption> getOrderItemCustomizationsOptions() {
-            return orderItemCustomizationsOptions;
-        }
-
-        public void setOrderItemCustomizationsOptions(List<OrderItemCustomizationsOption> orderItemCustomizationsOptions) {
-            this.orderItemCustomizationsOptions = orderItemCustomizationsOptions;
-        }
-
-        public OrderCustomizationDetails getOrderCustomizationDetails() {
-            return orderCustomizationDetails;
-        }
-
-        public void setOrderCustomizationDetails(OrderCustomizationDetails orderCustomizationDetails) {
-            this.orderCustomizationDetails = orderCustomizationDetails;
-        }
-
-    }
-
-    public class OrderItemCustomizationsOption {
-
-        @SerializedName("id")
-        @Expose
-        private int id;
-        @SerializedName("orderItemCustomizationId")
-        @Expose
-        private int orderItemCustomizationId;
-        @SerializedName("customizationOptionId")
-        @Expose
-        private int customizationOptionId;
-        @SerializedName("order_customization_option_details")
-        @Expose
-        private OrderCustomizationOptionDetails orderCustomizationOptionDetails;
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public int getOrderItemCustomizationId() {
-            return orderItemCustomizationId;
-        }
-
-        public void setOrderItemCustomizationId(int orderItemCustomizationId) {
-            this.orderItemCustomizationId = orderItemCustomizationId;
-        }
-
-        public int getCustomizationOptionId() {
-            return customizationOptionId;
-        }
-
-        public void setCustomizationOptionId(int customizationOptionId) {
-            this.customizationOptionId = customizationOptionId;
-        }
-
-        public OrderCustomizationOptionDetails getOrderCustomizationOptionDetails() {
-            return orderCustomizationOptionDetails;
-        }
-
-        public void setOrderCustomizationOptionDetails(OrderCustomizationOptionDetails orderCustomizationOptionDetails) {
-            this.orderCustomizationOptionDetails = orderCustomizationOptionDetails;
-        }
-
-    }
-
-    public class OrderStatus {
-
-        @SerializedName("id")
-        @Expose
-        private int id;
-        @SerializedName("name")
-        @Expose
-        private String name;
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public String getName() {
-            return Utility.checkNull(this.name);
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-    }
-
-    public class Restaurant {
-
-        @SerializedName("id")
-        @Expose
-        private int id;
-        @SerializedName("name")
-        @Expose
-        private String name;
-        @SerializedName("email")
-        @Expose
-        private String email;
-        @SerializedName("country_code")
-        @Expose
-        private String countryCode;
-        @SerializedName("mobile")
-        @Expose
-        private String mobile;
-        @SerializedName("key")
-        @Expose
-        private String key;
-        @SerializedName("tax_percent")
-        @Expose
-        private double taxPercent;
-        @SerializedName("address")
-        @Expose
-        private String address;
-        @SerializedName("city")
-        @Expose
-        private City city;
-        @SerializedName("country")
-        @Expose
-        private Country country;
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public String getName() {
-            return Utility.checkNull(this.name);
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getEmail() {
-            return Utility.checkNull(this.email);
-        }
-
-        public void setEmail(String email) {
-            this.email = email;
-        }
-
-        public String getCountryCode() {
-            return Utility.checkNull(this.countryCode);
-        }
-
-        public void setCountryCode(String countryCode) {
-            this.countryCode = countryCode;
-        }
-
-        public String getMobile() {
-            return Utility.checkNull(this.mobile);
-        }
-
-        public void setMobile(String mobile) {
-            this.mobile = mobile;
-        }
-
-        public String getKey() {
-            return Utility.checkNull(this.key);
-        }
-
-        public void setKey(String key) {
-            this.key = key;
-        }
-
-        public double getTaxPercent() {
-            return taxPercent;
-        }
-
-        public void setTaxPercent(double taxPercent) {
-            this.taxPercent = taxPercent;
-        }
-
-        public String getAddress() {
-            return Utility.checkNull(this.address);
-        }
-
-        public void setAddress(String address) {
-            this.address = address;
-        }
-
-        public City getCity() {
-            return city;
-        }
-
-        public void setCity(City city) {
-            this.city = city;
-        }
-
-        public Country getCountry() {
-            return country;
-        }
-
-        public void setCountry(Country country) {
-            this.country = country;
-        }
-
-    }
-
-    public class Table {
-
-        @SerializedName("id")
-        @Expose
-        private int id;
-        @SerializedName("name")
-        @Expose
-        private String name;
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public String getName() {
-            return Utility.checkNull(this.name);
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-    }
-
-    public class User {
-
-        @SerializedName("id")
-        @Expose
-        private int id;
-        @SerializedName("name")
-        @Expose
-        private String name;
-        @SerializedName("email")
-        @Expose
-        private String email;
-        @SerializedName("country_code")
-        @Expose
-        private String countryCode;
-        @SerializedName("mobile")
-        @Expose
-        private String mobile;
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public String getName() {
-            return Utility.checkNull(this.name);
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getEmail() {
-            return Utility.checkNull(this.email);
-        }
-
-        public void setEmail(String email) {
-            this.email = email;
-        }
-
-        public String getCountryCode() {
-            return Utility.checkNull(this.countryCode);
-        }
-
-        public void setCountryCode(String countryCode) {
-            this.countryCode = countryCode;
-        }
-
-        public String getMobile() {
-            return Utility.checkNull(this.mobile);
-        }
-
-        public void setMobile(String mobile) {
-            this.mobile = mobile;
-        }
-
-    }
-
-    public class Waiter {
-
-        @SerializedName("id")
-        @Expose
-        private int id;
-        @SerializedName("name")
-        @Expose
-        private String name;
-        @SerializedName("key")
-        @Expose
-        private String key;
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public String getName() {
-            return Utility.checkNull(this.name);
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getKey() {
-            return Utility.checkNull(this.key);
-        }
-
-        public void setKey(String key) {
-            this.key = key;
-        }
-
-    }
+    };
 }

@@ -6,6 +6,7 @@
     <string name="digit_number">0123456789</string>
     <string name="digit_alpha_number">abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</string>
     <string name="check_network">No Internet Connection!</string>
+    <string name="network_not_found">Network Not Found</string>
     <string name="try_again">Something went wrong Please try again later.</string>
     <string name="ok">OK</string>
     <string name="no_data">Data not available</string>
@@ -18,10 +19,10 @@
     <string name="txt_settings">Settings</string>
     <string name="txt_dismiss">Dismiss</string>
     <string name="txt_notifications">Notifications</string>
-    <string name="session_expire">Session Expire</string>
-    <string name="session_expire_msg">Your login session is expire, Please login again.</string>
-    <string name="block_admin">Block by Admin</string>
-    <string name="block_admin_msg">Sorry! your account blocked by admin.</string>
+    <string name="session_expire">Session Expired</string>
+    <string name="session_expire_msg">Your session is expired, Please login again.</string>
+    <string name="block_admin">Blocked by Admin</string>
+    <string name="block_admin_msg">Sorry! Your account is blocked by admin.</string>
     <string name="update">Update</string>
     <string name="later">Later</string>
 
@@ -31,6 +32,7 @@
     <string name="txt_password">Password</string>
     <string name="kitchenid_length">Kitchen ID is too short.</string>
     <string name="password_length">Password is too short.</string>
+    <string name="txt_forgot_password">I forgot my password</string>
 
     <!--HOME SCREEN-->
     <string name="txt_order_status">Order Status</string>
@@ -63,5 +65,40 @@
     <string name="txt_privacy_policy">Privacy Policy</string>
     <string name="terms_con_settings">Terms &amp; Conditions</string>
     <string name="text_kitchenid">kitchen Id-</string>
+    <string name="title_activity_home_new">HomeActivityNew</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="home_second">Home Second</string>
+    <string name="title_activity_tab">TabActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="txt_served">Served</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_all_done">All Done</string>
+    <string name="hint_order_search">Search order number eg 500051</string>
+    <string name="txt_id">ID</string>
+    <string name="username_empty_error">Kitchen Id cannot be empty</string>
+    <string name="password_empty_error">Password cannot be empty</string>
+    <string name="password_length_error">Password should be of atleast 5 characters</string>
+    <string name="something_went_wrong">Something Went Wrong! Please Try Again!</string>
+    <string name="bad_credentials">Wrong Credentials</string>
+    <string name="login_success">Login Successful</string>
+    <string name="unable_to_set_eta">Unable to Set ETA</string>
+    <string name="txt_complete_item_error">Unable to finish this item. Please try again!</string>
+    <string name="rupee_symbol">\u20B9</string>
+    <string name="title_order_history">Order History</string>
+    <string name="title_order_details">Detail - %s</string>
+
 
 </resources>

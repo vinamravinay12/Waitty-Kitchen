@@ -20,4 +20,13 @@
     <color name="colorOrderReady">#42ac00</color>
     <color name="colorETA">#e2e2e2</color>
     <color name="colorOrderTabEmpty">#F0F0F0</color>
+    <color name="colorTabItemTextSelected">#010526</color>
+    <color name="colorTabItemText">#B8BBC6</color>
+    <color name="colorWaiterIdText">#8A8C95</color>
+    <color name="colorBtnStartPreparingGreen">#0D9E45</color>
+    <color name="colorCountdownTimer">#F74B2D</color>
+    <color name="colorLightDisabled">#FAFAFC</color>
+    <color name ="colorBtnLogin">#E7E8EB</color>
+    <color name="colorTxtLink">#007BF7</color>
+    <color name ="colorBackgroundCheckbox">#F2F2F2</color>
 </resources>

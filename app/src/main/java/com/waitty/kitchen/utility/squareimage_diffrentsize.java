@@ -7,7 +7,7 @@ import android.util.Log;
 import android.widget.ImageView;
 import com.waitty.kitchen.R;
 
-public class squareimage_diffrentsize extends ImageView {
+public class squareimage_diffrentsize extends androidx.appcompat.widget.AppCompatImageView {
 
     Context context;
     String imageType;

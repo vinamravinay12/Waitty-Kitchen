@@ -10,11 +10,11 @@
 
     </data>
 
-    <android.support.design.widget.CoordinatorLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/Cordinator"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/yallow_gradiant_background">
+        android:background="@color/colorWhite">
 
            <ImageView
                 android:layout_width="wrap_content"
@@ -23,6 +23,6 @@
                 android:layout_gravity="center"
                 android:src="@mipmap/splash_logo"/>
 
-    </android.support.design.widget.CoordinatorLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </layout>

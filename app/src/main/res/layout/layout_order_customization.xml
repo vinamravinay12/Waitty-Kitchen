@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_10dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvOrderCustomizationOptions"
+            android:layout_width="@dimen/_150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:overScrollMode="never"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="@dimen/_10dp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
