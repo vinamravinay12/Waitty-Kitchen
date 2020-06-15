@@ -60,8 +60,8 @@ class LoginFragment : Fragment(), WKClickListener {
         }
 
         FragmentUtils.setBindingVariables(hashMapOf(BR.LoginVM to loginViewModel, BR.clickEvent to this), bindingLoginFragment)
-        bindingLoginFragment.layoutLoader?.apiErrorVM = apiErrorViewModel
-        bindingLoginFragment.layoutError?.apiErrorVM = apiErrorViewModel
+        bindingLoginFragment.layoutLoader.apiErrorVM = apiErrorViewModel
+        bindingLoginFragment.layoutError.apiErrorVM = apiErrorViewModel
 
         bindingLoginFragment.lifecycleOwner = this
 

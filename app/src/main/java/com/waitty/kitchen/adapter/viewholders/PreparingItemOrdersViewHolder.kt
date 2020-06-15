@@ -12,9 +12,7 @@ import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
 
-interface WKCheckChangeListener {
-    fun onCheckChanged(item : Any?)
-}
+
 class PreparingItemOrdersViewHolder(private val viewBinding: LayoutItemOrderHeaderBinding,private val variablesMap : HashMap<Int,Any?>) : GenericOrderViewHolder<OrderItem>(viewBinding) {
 
 

@@ -24,10 +24,6 @@ class ItemDescriptionViewModel : ViewModel() {
     private val customizationsMap = TreeMap<String,List<String>>()
 
 
-
-
-
-
     fun setRupeeSymbol(rupeeSymbol : String) {
         this.rupeeSymbol = rupeeSymbol
     }
