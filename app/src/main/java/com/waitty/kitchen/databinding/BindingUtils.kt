@@ -12,10 +12,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.viewpager.widget.ViewPager
 import com.squareup.picasso.Picasso
 import com.waitty.kitchen.R
-import com.waitty.kitchen.adapter.viewholders.WKCheckChangeListener
 import com.waitty.kitchen.fragment.EditTextEditorActionHandler
 import com.waitty.kitchen.fragment.FragmentUtils
 import com.waitty.kitchen.utility.Utility
+import com.waitty.kitchen.utility.WKCheckChangeListener
 import com.waitty.kitchen.viewmodel.KeyItemActionListener
 
 object BindingUtils {
@@ -92,7 +92,7 @@ object BindingUtils {
 
 
     @BindingAdapter(value = ["itemChecked", "checkedItem"],requireAll = true)
-    @JvmStatic fun setCheckChange(checkBox: CompoundButton,checkListener : WKCheckChangeListener,item : Any? ) {
+    @JvmStatic fun setCheckChange(checkBox: CompoundButton, checkListener : WKCheckChangeListener, item : Any? ) {
         checkBox.setOnCheckedChangeListener { buttonView, isChecked ->
             if(isChecked) checkListener.onCheckChanged(item)
         }

@@ -28,7 +28,7 @@
                 android:textSize="@dimen/_12ssp"
                 android:gravity="center"
                 android:singleLine="true"
-                android:background="@color/colorYallow"
+                android:background="@color/colorYellow"
                 android:padding="@dimen/_8sdp"
                 android:fontFamily="@font/p_medium"/>
 

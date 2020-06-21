@@ -17,13 +17,13 @@ import com.translabtechnologies.visitormanagementsystem.vmshost.database.SharedP
 import com.waitty.kitchen.R
 import com.waitty.kitchen.activity.ui.home.HomeFragment
 import com.waitty.kitchen.adapter.PreparingOrdersAdapter
-import com.waitty.kitchen.adapter.viewholders.WKCheckChangeListener
 import com.waitty.kitchen.constant.WaittyConstants
 import com.waitty.kitchen.databinding.FragmentPreparingOrderDetailsListBinding
 import com.waitty.kitchen.model.APIStatus
 import com.waitty.kitchen.model.OrderItem
 import com.waitty.kitchen.model.apimodel.OrderResponse
 import com.waitty.kitchen.utility.Utility
+import com.waitty.kitchen.utility.WKCheckChangeListener
 import com.waitty.kitchen.utility.WKItemClickListener
 import com.waitty.kitchen.viewmodel.ApiErrorViewModel
 import com.waitty.kitchen.viewmodel.PreparingOrdersViewModel

@@ -2,7 +2,7 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <gradient
         android:type="linear"
-        android:startColor="@color/colorYallow"
+        android:startColor="@color/colorYellow"
         android:endColor="@color/colorYallowGradiantButton"
         android:angle="270"/>
     <corners android:radius="50dp"/>

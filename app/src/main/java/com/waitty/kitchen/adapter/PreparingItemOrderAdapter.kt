@@ -5,9 +5,10 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.waitty.kitchen.adapter.viewholders.GenericOrderViewHolder
 import com.waitty.kitchen.adapter.viewholders.PreparingItemOrdersViewHolder
-import com.waitty.kitchen.adapter.viewholders.WKCheckChangeListener
+
 import com.waitty.kitchen.databinding.LayoutItemOrderHeaderBinding
 import com.waitty.kitchen.model.OrderItem
+import com.waitty.kitchen.utility.WKCheckChangeListener
 
 class PreparingItemOrderAdapter(private val layoutRes: Int, private val dataList: MutableList<OrderItem>, private val orderItemDoneListener: WKCheckChangeListener) : GenericOrderAdapter<OrderItem>(dataList) {
 

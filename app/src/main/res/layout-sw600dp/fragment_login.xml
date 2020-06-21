@@ -21,7 +21,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/viewLogin">
+            android:id="@+id/viewLogin"
+            tools:visibility="visible">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtInputKitchenIdLayout"
@@ -34,6 +35,8 @@
                 android:hint="@string/txt_id"
                 app:boxStrokeColor="@color/colorWaiterIdText"
                 app:boxStrokeWidth="@dimen/_1dp"
+                android:textColorHint="@color/colorTabItemTextSelected"
+                app:hintTextColor="@color/colorTabItemTextSelected"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -49,7 +52,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout"
+                android:id="@+id/txtInputPasswordLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="290dp"
                 android:layout_height="56dp"
@@ -57,20 +60,24 @@
                 android:layout_marginTop="72dp"
                 android:layout_marginEnd="1dp"
                 android:hint="@string/txt_password"
+                android:textColorHint="@color/colorTabItemTextSelected"
                 app:boxStrokeColor="@color/colorWaiterIdText"
                 app:boxStrokeWidth="@dimen/_1dp"
+                app:hintTextColor="@color/colorTabItemTextSelected"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtInputKitchenIdLayout">
+                app:layout_constraintTop_toBottomOf="@+id/txtInputKitchenIdLayout"
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textSize="@dimen/_14sp"
-                    android:id="@+id/etPassword"
-                    android:textColor="@color/colorTabItemTextSelected"
                     android:fontFamily="@font/bwnistageo_medium"
-                    android:text="@={LoginVM.password}"/>
+                    android:inputType="textPassword"
+                    android:text="@={LoginVM.password}"
+                    android:textColor="@color/colorTabItemTextSelected"
+                    android:textSize="@dimen/_14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -87,18 +94,17 @@
 
             <TextView
                 android:id="@+id/tvErrorPassword"
+                style="@style/ErrorTextTheme"
                 android:layout_width="290dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="257dp"
+                android:layout_marginStart="60dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="485dp"
-                tools:text="TextView"
-                style="@style/ErrorTextTheme"
+                android:layout_marginEnd="60dp"
                 android:text='@{LoginVM.passwordError.intValue() > 0 ? context.getString(LoginVM.passwordError.intValue()) : ""}'
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.008"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+                app:layout_constraintTop_toBottomOf="@+id/txtInputPasswordLayout"
+                tools:text="TextView" />
 
             <Button
                 android:id="@+id/btnLogin"

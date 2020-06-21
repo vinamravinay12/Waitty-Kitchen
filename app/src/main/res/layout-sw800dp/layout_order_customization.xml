@@ -4,11 +4,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_50dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvOrderCustomizationOptions"
-            android:layout_width="@dimen/_150dp"
+            android:layout_width="@dimen/_300dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="45dp"
             android:layout_marginTop="20dp"

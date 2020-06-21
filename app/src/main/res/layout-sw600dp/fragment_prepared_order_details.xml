@@ -1,239 +1,244 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-   <import type="android.text.TextUtils" />
-       <import type="android.view.View" />
+        <import type="android.text.TextUtils" />
+        <import type="android.view.View" />
         <variable
             name="orderDetailsVM"
             type="com.waitty.kitchen.viewmodel.PreparedItemOrdersViewModel" />
     </data>
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".fragment.PreparedOrderDetailsFragment">
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_570dp"
-            android:layout_marginStart="@dimen/_60dp"
-            android:layout_marginTop="@dimen/_30dp"
-            android:layout_marginEnd="@dimen/_60dp"
-            app:cardCornerRadius="@dimen/_10dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="@dimen/_560dp"
+                android:layout_marginStart="@dimen/_60dp"
+                android:layout_marginTop="@dimen/_30dp"
+                android:layout_marginEnd="@dimen/_60dp"
+                app:cardCornerRadius="@dimen/_10dp"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardElevation="@dimen/_5dp">
 
-                <TextView
-                    android:id="@+id/tvOrderNumber"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="25dp"
-                    android:fontFamily="@font/bwnistageo_bold"
-                    android:text="@{orderDetailsVM.orderId}"
-                    android:textColor="@color/colorTabItemTextSelected"
-                    android:textSize="@dimen/_16sp"
-                    app:layout_constraintStart_toStartOf="parent"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Order No - #55523" />
+                    <TextView
+                        android:id="@+id/tvOrderNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="25dp"
+                        android:fontFamily="@font/bwnistageo_bold"
+                        android:text="@{orderDetailsVM.orderId}"
+                        android:textColor="@color/colorTabItemTextSelected"
+                        android:textSize="@dimen/_16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Order No - #55523" />
 
 
-                <TextView
-                    android:id="@+id/tvWaiterName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="8dp"
-                    android:fontFamily="@font/bwnistageo_light"
-                    android:paddingEnd="@dimen/_5dp"
-                    android:text="@{orderDetailsVM.waiterDetails}"
-                    android:textColor="@color/colorWaiterIdText"
-                    android:textSize="@dimen/_14sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvOrderNumber"
-                    tools:text="Vinamra Vinay" />
+                    <TextView
+                        android:id="@+id/tvWaiterName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/bwnistageo_light"
+                        android:paddingEnd="@dimen/_5dp"
+                        android:text="@{orderDetailsVM.waiterDetails}"
+                        android:textColor="@color/colorWaiterIdText"
+                        android:textSize="@dimen/_14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvOrderNumber"
+                        tools:text="Vinamra Vinay" />
 
-                <TextView
-                    android:id="@+id/tvOrderArrivingDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="8dp"
-                    android:fontFamily="@font/bwnistageo_light"
-                    android:text="@{orderDetailsVM.arrivingTime}"
-                    android:textColor="@color/colorCountdownTimer"
-                    android:textSize="@dimen/_14sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvWaiterName"
-                    tools:text="12 sep
+                    <TextView
+                        android:id="@+id/tvOrderArrivingDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/bwnistageo_light"
+                        android:text="@{orderDetailsVM.arrivingTime}"
+                        android:textColor="@color/colorCountdownTimer"
+                        android:textSize="@dimen/_14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvWaiterName"
+                        tools:text="12 sep
 " />
 
-                <TextView
-                    android:id="@+id/tvTableId"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="30dp"
-                    android:fontFamily="@font/bwnistageo_medium"
-                    android:text="@{orderDetailsVM.tableId}"
-                    android:textColor="@color/colorTabItemTextSelected"
-                    android:textSize="@dimen/_36sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvOrderArrivingDate"
-                    tools:text="T 12" />
+                    <TextView
+                        android:id="@+id/tvTableId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="30dp"
+                        android:fontFamily="@font/bwnistageo_medium"
+                        android:text="@{orderDetailsVM.tableId}"
+                        android:textColor="@color/colorTabItemTextSelected"
+                        android:textSize="@dimen/_36sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvOrderArrivingDate"
+                        tools:text="T 12" />
 
-                <TextView
-                    android:id="@+id/tvTotalOrderItems"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginEnd="50dp"
-                    android:fontFamily="@font/bwnistageo_medium"
-                    android:text="@{orderDetailsVM.totalOrderItems}"
-                    android:textColor="@color/colorTabItemTextSelected"
-                    android:textSize="@dimen/_16sp"
-                    app:layout_constraintEnd_toStartOf="@+id/tvorderType"
-                    app:layout_constraintStart_toEndOf="@+id/tvTableId"
-                    app:layout_constraintTop_toBottomOf="@+id/tvOrderArrivingDate"
-                    tools:text="x3" />
+                    <TextView
+                        android:id="@+id/tvTotalOrderItems"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginEnd="50dp"
+                        android:fontFamily="@font/bwnistageo_medium"
+                        android:text="@{orderDetailsVM.totalOrderItems}"
+                        android:textColor="@color/colorTabItemTextSelected"
+                        android:textSize="@dimen/_16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/tvorderType"
+                        app:layout_constraintStart_toEndOf="@+id/tvTableId"
+                        app:layout_constraintTop_toBottomOf="@+id/tvOrderArrivingDate"
+                        tools:text="x3" />
 
-                <TextView
-                    android:id="@+id/tvorderType"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="35dp"
-                    android:layout_marginEnd="15dp"
-                    android:background='@{orderDetailsVM.orderType.equalsIgnoreCase("Take Away") ? @drawable/background_order_type_rounded_take_away : @drawable/background_order_type_rounded_dine_in }'
-                    android:fontFamily="@font/bwnistageo_medium"
-                    android:gravity="center"
-                    android:paddingStart="@dimen/_12dp"
-                    android:paddingTop="@dimen/_8dp"
-                    android:paddingEnd="@dimen/_12dp"
-                    android:paddingBottom="@dimen/_8dp"
-                    android:text="@{orderDetailsVM.orderType}"
-                    android:textColor='@{orderDetailsVM.orderType.equalsIgnoreCase("Take Away") ? @color/colorTabItemTextSelected : @color/colorWhite }'
-                    android:textSize="@dimen/_12sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvOrderArrivingDate"
-                    tools:background="@drawable/background_order_type_rounded_dine_in"
-                    tools:backgroundTint="@color/colorTabItemTextSelected"
-                    tools:text="Dine In"
-                    tools:textColor="@color/colorWhite" />
+                    <TextView
+                        android:id="@+id/tvorderType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="35dp"
+                        android:layout_marginEnd="15dp"
+                        android:background='@{orderDetailsVM.orderType.equalsIgnoreCase("Take Away") ? @drawable/background_order_type_rounded_take_away : @drawable/background_order_type_rounded_dine_in }'
+                        android:fontFamily="@font/bwnistageo_medium"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_12dp"
+                        android:paddingTop="@dimen/_8dp"
+                        android:paddingEnd="@dimen/_12dp"
+                        android:paddingBottom="@dimen/_8dp"
+                        android:text="@{orderDetailsVM.orderType}"
+                        android:textColor='@{orderDetailsVM.orderType.equalsIgnoreCase("Take Away") ? @color/colorTabItemTextSelected : @color/colorWhite }'
+                        android:textSize="@dimen/_12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvOrderArrivingDate"
+                        tools:background="@drawable/background_order_type_rounded_dine_in"
+                        tools:backgroundTint="@color/colorTabItemTextSelected"
+                        tools:text="Dine In"
+                        tools:textColor="@color/colorWhite" />
 
-                <View
-                    android:id="@+id/view2"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_1dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="#B8BBC6"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvTableId" />
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_1dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="#B8BBC6"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTableId" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvPreparedOrderItems"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_200dp"
-                    android:layout_marginStart="1dp"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view2" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvPreparedOrderItems"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_200dp"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view2"
+                        android:overScrollMode="always"/>
 
-                <View
-                    android:id="@+id/view3"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_1dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="#B8BBC6"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/rvPreparedOrderItems" />
+                    <View
+                        android:id="@+id/view3"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_1dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="#B8BBC6"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rvPreparedOrderItems" />
 
-                <TextView
-                    android:id="@+id/tvOrderComment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/bwnistageo_light"
-                    android:text="@{orderDetailsVM.comment}"
-                    android:textColor="@color/colorCountdownTimer"
-                    android:textSize="@dimen/_14sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view3"
-                    tools:text="Extra spoons and fork please" />
+                    <TextView
+                        android:id="@+id/tvOrderComment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/bwnistageo_light"
+                        android:text="@{orderDetailsVM.comment}"
+                        android:textColor="@color/colorCountdownTimer"
+                        android:textSize="@dimen/_14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view3"
+                        tools:text="Extra spoons and fork please" />
 
-                <View
-                    android:id="@+id/view4"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_1dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="#B8BBC6"
-                    android:visibility="@{TextUtils.isEmpty(orderDetailsVM.comment) ? View.GONE : View.VISIBLE}"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvOrderComment" />
+                    <View
+                        android:id="@+id/view4"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_1dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="#B8BBC6"
+                        android:visibility="@{TextUtils.isEmpty(orderDetailsVM.comment) ? View.GONE : View.VISIBLE}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvOrderComment" />
 
-                <TextView
-                    android:id="@+id/tvItemTotal"
-                    style="@style/orderTotalTextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginEnd="20dp"
-                    android:text="@{orderDetailsVM.itemOrderTotal}"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view4"
-                    tools:text="Item Total  850" />
+                    <TextView
+                        android:id="@+id/tvItemTotal"
+                        style="@style/orderTotalTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="@{orderDetailsVM.itemOrderTotal}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view4"
+                        tools:text="Item Total  850" />
 
-                <TextView
-                    android:id="@+id/tvTaxTotal"
-                    style="@style/orderTotalTextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="20dp"
-                    android:text="@{orderDetailsVM.taxTotal}"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvItemTotal"
-                    tools:text="Tax(5%)  42.5" />
+                    <TextView
+                        android:id="@+id/tvTaxTotal"
+                        style="@style/orderTotalTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="@{orderDetailsVM.taxTotal}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvItemTotal"
+                        tools:text="Tax(5%)  42.5" />
 
-                <TextView
-                    android:id="@+id/tvOrderTotal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="@dimen/_20dp"
-                    android:text="@{orderDetailsVM.orderTotal}"
-                    android:fontFamily="@font/bwnistageo_bold"
-                    android:gravity="center_vertical|start"
-                    android:textColor="@color/colorTabItemTextSelected"
-                    android:textSize="@dimen/_14sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvTaxTotal"
-                    tools:text="Total  892.5" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:id="@+id/tvOrderTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="@dimen/_20dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/bwnistageo_bold"
+                        android:gravity="center_vertical|start"
+                        android:text="@{orderDetailsVM.orderTotal}"
+                        android:textColor="@color/colorTabItemTextSelected"
+                        android:textSize="@dimen/_14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTaxTotal"
+                        tools:text="Total  892.5" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
         </androidx.core.widget.NestedScrollView>
     </FrameLayout>
 </layout>

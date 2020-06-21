@@ -56,13 +56,13 @@ class NewOrderDetailsFragment : Fragment(), WKItemClickListener {
         super.onActivityCreated(savedInstanceState)
 
         bindingNewOrderDetailsFragment.layoutError.apiErrorVM = apiErrorViewModel
-        bindingNewOrderDetailsFragment.rvNewOrders?.layoutManager = if(!Utility.isTablet(context)) LinearLayoutManager(context)
+        bindingNewOrderDetailsFragment.rvNewOrders.layoutManager = if(!Utility.isTablet(context)) LinearLayoutManager(context)
                                                                     else GridLayoutManager(context,2)
 
-        bindingNewOrderDetailsFragment.rvNewOrders?.setHasFixedSize(true)
+        bindingNewOrderDetailsFragment.rvNewOrders.setHasFixedSize(true)
         viewModel?.getOrderAdapter()?.setVariablesMap(getVariablesMap())
-        bindingNewOrderDetailsFragment.rvNewOrders?.adapter = viewModel?.getOrderAdapter()
-        bindingNewOrderDetailsFragment.rvNewOrders?.addOnScrollListener(RecyclerViewScrollListener())
+        bindingNewOrderDetailsFragment.rvNewOrders.adapter = viewModel?.getOrderAdapter()
+        bindingNewOrderDetailsFragment.rvNewOrders.addOnScrollListener(RecyclerViewScrollListener())
         scheduleAlarm()
 
 
@@ -171,7 +171,7 @@ class NewOrderDetailsFragment : Fragment(), WKItemClickListener {
         val alarm = context?.getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
         alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP, firstMillis,
-                2*60*1000, pIntent)
+                30*1000, pIntent)
     }
 
 

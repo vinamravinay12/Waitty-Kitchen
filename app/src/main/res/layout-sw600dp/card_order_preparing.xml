@@ -25,9 +25,9 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
-            android:layout_height="@dimen/_550dp"
-            android:layout_marginStart="@dimen/_15dp"
-            android:layout_marginEnd="@dimen/_15dp"
+            android:layout_height="@dimen/_520dp"
+            android:layout_marginStart="@dimen/_40dp"
+            android:layout_marginEnd="@dimen/_40dp"
             app:cardCornerRadius="@dimen/_10dp"
             app:cardElevation="@dimen/_10dp"
             android:layout_marginTop="@dimen/_25dp"
@@ -170,7 +170,6 @@
                     android:text="@string/txt_all_done"
                     android:textAllCaps="false"
                     android:textSize="@dimen/_18sp"
-                    android:enabled="@{orderPreparingVM.isOrderDoneButtonEnabled(position)}"
                     android:onClick="@{() -> clickItemEvent.onItemClick(position)}"
                     android:layout_marginBottom="-1dp"
                     app:layout_constraintBottom_toBottomOf="parent"

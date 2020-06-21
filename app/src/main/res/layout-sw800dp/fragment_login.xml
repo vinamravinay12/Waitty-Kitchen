@@ -12,134 +12,133 @@
             name="clickEvent"
             type="com.waitty.kitchen.utility.WKClickListener" />
 
-       <import type="com.waitty.kitchen.viewmodel.ClickType" />
+        <import type="com.waitty.kitchen.viewmodel.ClickType" />
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/viewLogin">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/viewLogin"
+            tools:visibility="visible">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtInputKitchenIdLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="290dp"
-            android:layout_height="56dp"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginEnd="1dp"
-            android:hint="@string/txt_id"
-            android:textColorHint="@color/colorTabItemTextSelected"
-            app:boxStrokeColor="@color/colorWaiterIdText"
-            app:boxStrokeWidth="@dimen/_1dp"
-            app:hintTextColor="@color/colorTabItemTextSelected"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtInputKitchenIdLayout"
+                android:layout_width="290dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginEnd="1dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="@string/txt_id"
+                app:boxStrokeColor="@color/colorWaiterIdText"
+                app:boxStrokeWidth="@dimen/_1dp"
+                android:textColorHint="@color/colorTabItemTextSelected"
+                app:hintTextColor="@color/colorTabItemTextSelected"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etKitchenId"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/bwnistageo_medium"
-                android:text="@={LoginVM.kitchenId}"
-                android:textCursorDrawable="@color/colorTabItemTextSelected"
-                android:textColor="@color/colorTabItemTextSelected"
-                android:textSize="@dimen/_14sp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etKitchenId"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/_14sp"
+                    android:text="@={LoginVM.kitchenId}"
+                    android:textColor="@color/colorTabItemTextSelected"
+                    android:fontFamily="@font/bwnistageo_medium" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtInputPasswordLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="290dp"
-            android:layout_height="56dp"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="72dp"
-            android:layout_marginEnd="1dp"
-            android:hint="@string/txt_password"
-            android:textColorHint="@color/colorTabItemTextSelected"
-            app:boxStrokeColor="@color/colorWaiterIdText"
-            app:boxStrokeWidth="@dimen/_1dp"
-            app:hintTextColor="@color/colorTabItemTextSelected"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtInputKitchenIdLayout">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtInputPasswordLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="290dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="72dp"
+                android:layout_marginEnd="1dp"
+                android:hint="@string/txt_password"
+                android:textColorHint="@color/colorTabItemTextSelected"
+                app:boxStrokeColor="@color/colorWaiterIdText"
+                app:boxStrokeWidth="@dimen/_1dp"
+                app:hintTextColor="@color/colorTabItemTextSelected"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtInputKitchenIdLayout"
+                app:passwordToggleEnabled="true">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etPassword"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/bwnistageo_medium"
-                android:inputType="textPassword"
-                android:text="@={LoginVM.password}"
-                android:textCursorDrawable="@color/colorTabItemTextSelected"
-                android:textColor="@color/colorTabItemTextSelected"
-                android:textSize="@dimen/_14sp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/bwnistageo_medium"
+                    android:inputType="textPassword"
+                    android:text="@={LoginVM.password}"
+                    android:textColor="@color/colorTabItemTextSelected"
+                    android:textSize="@dimen/_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/tvIdError"
-            android:layout_width="290dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            tools:text="Email not valid"
-            style="@style/ErrorTextTheme"
-            android:text='@{LoginVM.userIdError.intValue() > 0 ? context.getString(LoginVM.userIdError.intValue()) : ""}'
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtInputKitchenIdLayout" />
+            <TextView
+                android:id="@+id/tvIdError"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                tools:text="Email not valid"
+                style="@style/ErrorTextTheme"
+                android:text='@{LoginVM.userIdError.intValue() > 0 ? context.getString(LoginVM.userIdError.intValue()) : ""}'
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtInputKitchenIdLayout" />
 
-        <TextView
-            android:id="@+id/tvErrorPassword"
-            android:layout_width="290dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="257dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="485dp"
-            tools:text="TextView"
-            style="@style/ErrorTextTheme"
-            android:text='@{LoginVM.passwordError.intValue() > 0 ? context.getString(LoginVM.passwordError.intValue()) : ""}'
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.008"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtInputPasswordLayout" />
+            <TextView
+                android:id="@+id/tvErrorPassword"
+                style="@style/ErrorTextTheme"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="60dp"
+                android:text='@{LoginVM.passwordError.intValue() > 0 ? context.getString(LoginVM.passwordError.intValue()) : ""}'
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtInputPasswordLayout"
+                tools:text="TextView" />
 
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="260dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            style="@style/BtnLogin"
-            android:drawableEnd="@drawable/ic_action_name"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            android:text="@string/txt_signin"
-            app:backgroundTint="@color/colorTxtLink"
-            app:cornerRadius="@dimen/_25dp"
-            app:elevation="0dp"
-            android:gravity="center_horizontal|center_vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvErrorPassword" />
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                style="@style/BtnLogin"
+                android:drawableEnd="@drawable/ic_action_name"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/txt_signin"
+                app:backgroundTint="@color/colorTxtLink"
+                app:cornerRadius="@dimen/_25dp"
+                app:elevation="0dp"
+                android:gravity="center_horizontal|center_vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvErrorPassword" />
 
-        <TextView
-            android:id="@+id/tvForgotPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="320dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="320dp"
-            android:fontFamily="@font/bwnistageo_bold"
-            android:text="@string/txt_forgot_password"
-            android:textColor="@color/colorTxtLink"
-            android:textSize="@dimen/_14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tvForgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="320dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="320dp"
+                android:fontFamily="@font/bwnistageo_bold"
+                android:text="@string/txt_forgot_password"
+                android:textColor="@color/colorTxtLink"
+                android:textSize="@dimen/_14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <include layout="@layout/layout_custom_loading"
             android:id="@+id/layoutLoader"

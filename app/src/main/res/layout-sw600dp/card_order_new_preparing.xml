@@ -18,8 +18,8 @@
     </data>
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="@dimen/_323dp"
-        android:layout_height="@dimen/_313dp"
+        android:layout_width="@dimen/_250dp"
+        android:layout_height="@dimen/_280dp"
         app:cardCornerRadius="@dimen/_10dp"
         app:cardElevation="@dimen/_3dp"
         app:cardBackgroundColor="@color/colorWhite">
@@ -38,7 +38,7 @@
                 android:fontFamily="@font/bwnistageo_bold"
                 android:text="@{newOrderVM.getTableId(position)}"
                 android:textColor="@color/colorTabItemTextSelected"
-                android:textSize="@dimen/_40sp"
+                android:textSize="@dimen/_36sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="T 17" />

@@ -12,7 +12,7 @@
             type="Integer" />
         <variable
             name="itemClickEvent"
-            type="com.waitty.kitchen.adapter.viewholders.WKCheckChangeListener" />
+            type="com.waitty.kitchen.utility.WKCheckChangeListener" />
 
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -40,14 +40,14 @@
             android:layout_marginEnd="12dp"
             android:background="@{itemDescriptionVM.isItemReady(position) ? @color/colorBtnStartPreparingGreen : @color/colorBackgroundCheckbox}"
             android:button="@drawable/ic_check"
-            android:buttonTint="@color/colorWhite"
             android:checked="false"
             tools:background="@color/colorBackgroundCheckbox"
             android:paddingStart="@dimen/_15dp"
             android:paddingTop="@dimen/_10dp"
             android:paddingEnd="@dimen/_15dp"
             android:paddingBottom="@dimen/_10dp"
-            android:textColor="@color/colorTabItemText"
+            android:buttonTint="@{itemDescriptionVM.isItemReady(position) ? @color/colorWhite : @color/colorTabItemText}"
+            android:textColor="@{itemDescriptionVM.isItemReady(position) ? @color/colorWhite : @color/colorTabItemText}"
             android:textSize="@dimen/_14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

@@ -11,10 +11,10 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_45dp"
-            android:layout_marginStart="30dp"
+            android:layout_height="@dimen/_60dp"
+            android:layout_marginStart="@dimen/_45dp"
             android:layout_marginTop="40dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginEnd="@dimen/_45dp"
             android:backgroundTint="@color/colorWhite"
             android:elevation="@dimen/_5dp"
             app:cardCornerRadius="@dimen/_5dp"
@@ -27,6 +27,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/colorTransparent"
+                android:singleLine="true"
+                android:maxLines="1"
                 android:drawableLeft="@drawable/icon_search_light_grey_24dp"
                 android:hint="Search order number eg 500051" />
         </androidx.cardview.widget.CardView>
@@ -35,10 +37,14 @@
             android:id="@+id/rvPreparedOrders"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_10dp"
             android:layout_marginBottom="10dp"
             android:overScrollMode="never"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:paddingTop="@dimen/_30dp"
+            android:paddingStart="@dimen/_20dp"
+            android:paddingEnd="@dimen/_20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView" />
 

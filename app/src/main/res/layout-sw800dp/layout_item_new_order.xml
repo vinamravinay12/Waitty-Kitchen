@@ -4,17 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
-            name="newOrderItem"
+            name="orderItem"
             type="com.waitty.kitchen.model.OrderItem" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/_30dp"
-        android:paddingRight="@dimen/_30dp"
-        android:paddingBottom="@dimen/_10dp"
-        android:padding="@dimen/_20dp">
-
+        android:padding="@dimen/_10dp">
 
         <TextView
             android:id="@+id/tvNewItemOrderCount"
@@ -23,8 +19,8 @@
             android:layout_marginTop="@dimen/_10dp"
             android:gravity="center"
             android:background="@drawable/box_new_order_item_count"
-            tools:text="1"
-            android:text="@{newOrderItem.quantity}"
+            android:text="@{String.valueOf(orderItem.quantity)}"
+
             android:textSize="@dimen/_14sp"
             android:textColor="@color/colorTabItemTextSelected"
             android:fontFamily="@font/bwnistageo_medium"
@@ -51,8 +47,7 @@
             android:layout_height="@dimen/_30dp"
             android:layout_marginStart="@dimen/_20dp"
             android:layout_marginTop="@dimen/_10dp"
-            android:text="@{newOrderItem.dishDetails.name}"
-            tools:text="Chicken Chilli"
+            android:text="@{orderItem.dishDetails.name}"
             android:gravity="center"
             android:textSize="@dimen/_16sp"
             android:textColor="@color/colorTabItemTextSelected"

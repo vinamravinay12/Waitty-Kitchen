@@ -12,7 +12,7 @@
             android:id="@+id/rvNewOrders"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:visibility="visible"
+            tools:visibility="gone"
             android:paddingTop="@dimen/_25dp" />
 
         <ImageView
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-50dp"
             android:layout_gravity="center"
-            android:visibility="gone"
+            tools:visibility="gone"
             app:srcCompat="@drawable/ic_no_order" />
 
         <include layout="@layout/layout_connection_error"

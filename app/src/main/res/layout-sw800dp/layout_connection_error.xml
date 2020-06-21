@@ -2,7 +2,6 @@
 <layout>
 
     <data>
-        <import type="android.text.TextUtils" />
         <variable
             name="APIErrorVM"
             type="com.waitty.kitchen.viewmodel.ApiErrorViewModel" />
@@ -17,9 +16,9 @@
 
         <ImageView
             android:id="@+id/ivErrorType"
-            android:layout_width="528dp"
-            android:layout_height="324dp"
-            android:layout_marginTop="228dp"
+            android:layout_width="@dimen/_500dp"
+            android:layout_height="@dimen/_300dp"
+            android:layout_marginTop="@dimen/_350dp"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,12 +30,14 @@
             android:id="@+id/tvErrorType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="373dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginEnd="369dp"
+            android:layout_marginStart="@dimen/_30dp"
+            android:layout_marginTop="@dimen/_30dp"
+            android:layout_marginEnd="@dimen/_30dp"
             android:fontFamily="@font/bwnistageo_bold"
             android:textColor="@color/colorTabItemTextSelected"
-            android:textSize="@dimen/_40sp"
+            android:ems="14"
+            android:textSize="@dimen/_32sp"
+            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivErrorType"
@@ -48,15 +49,15 @@
             android:id="@+id/tvErrorMessage"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="@dimen/_25dp"
-            android:layout_marginEnd="100dp"
+            android:layout_marginStart="@dimen/_50dp"
+            android:layout_marginTop="@dimen/_15dp"
+            android:layout_marginEnd="@dimen/_50dp"
             android:fontFamily="@font/bwnistageo_medium"
             android:gravity="center_horizontal"
             android:padding="@dimen/_5dp"
             android:text="@{APIErrorVM.errorMessage}"
             android:textColor="@color/colorWaiterIdText"
-            android:textSize="@dimen/_22sp"
+            android:textSize="@dimen/_26sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvErrorType"

@@ -15,22 +15,21 @@
         android:layout_height="match_parent"
         android:background="@color/colorTransparent"
         android:gravity="center"
-
+        android:id="@+id/progress_view"
         android:layout_marginTop="-20dp"
         android:orientation="vertical"
-        android:visibility="@{ApiErrorVM.progressViewVisibility}">
+        progressVisibility="@{ApiErrorVM.progressViewVisibility}">
 
         <ProgressBar
             android:id="@+id/progressBar"
             style="@style/Widget.AppCompat.ProgressBar"
-            android:layout_width="@dimen/_50sdp"
-            android:layout_height="@dimen/_50sdp"
+            progressVisibility="@{ApiErrorVM.progressViewVisibility}"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
             android:theme="@style/CircularProgress"
-            android:visibility="@{ApiErrorVM.progressViewVisibility}"
-            progressAnimate="@{ApiErrorVM.progressVisibility.booleanValue()}"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.516"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.373" />
@@ -40,17 +39,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/bwnistageo_medium"
+            android:fontFamily="@font/p_regular"
             android:gravity="center"
-            android:textColor="@color/colorWaiterIdText"
+            android:textColor="@color/colorWhite"
             android:textSize="@dimen/_28sp"
-            android:padding="@dimen/_5dp"
             android:text="@{ApiErrorVM.progressMessage}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.527"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/progressBar"
-            tools:text="Signing in.." />
+            app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

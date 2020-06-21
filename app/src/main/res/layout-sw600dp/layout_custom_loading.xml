@@ -6,8 +6,8 @@
 
     <data>
         <variable
-            name="loader"
-            type="com.waitty.kitchen.utility.MyLoading"/>
+            name="ApiErrorVM"
+            type="com.waitty.kitchen.viewmodel.ApiErrorViewModel"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,19 +15,21 @@
         android:layout_height="match_parent"
         android:background="@color/colorTransparent"
         android:gravity="center"
-        android:orientation="vertical">
+        android:id="@+id/progress_view"
+        android:layout_marginTop="-20dp"
+        android:orientation="vertical"
+        progressVisibility="@{ApiErrorVM.progressViewVisibility}">
 
         <ProgressBar
             android:id="@+id/progressBar"
-
             style="@style/Widget.AppCompat.ProgressBar"
-            android:layout_width="@dimen/_35sdp"
-            android:layout_height="@dimen/_35sdp"
+            progressVisibility="@{ApiErrorVM.progressViewVisibility}"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
             android:theme="@style/CircularProgress"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.516"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.373" />
@@ -40,7 +42,8 @@
             android:fontFamily="@font/p_regular"
             android:gravity="center"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_20sp"
+            android:text="@{ApiErrorVM.progressMessage}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/progressBar" />

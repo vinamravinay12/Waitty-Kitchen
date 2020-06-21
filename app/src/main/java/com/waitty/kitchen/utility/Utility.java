@@ -66,7 +66,7 @@ public class Utility {
                     }
                 });
 
-        snackbar.setActionTextColor(ContextCompat.getColor(context, R.color.colorYallow));
+        snackbar.setActionTextColor(ContextCompat.getColor(context, R.color.colorYellow));
 
         View snackbarView = snackbar.getView();
         int snackbarTextId = R.id.snackbar_text;
@@ -172,11 +172,11 @@ public class Utility {
         });
     }
 
-    // Change date on specific formate
-    public static String ChangeDateFormate(SimpleDateFormat dateFormaterServer, String date, SimpleDateFormat dateFormaterConvert) {
+    // Change date on specific format
+    public static String ChangeDateFormat(SimpleDateFormat dateFormatterServer, String date, SimpleDateFormat dateFormatterConvert) {
         try {
-            Date NewDate = dateFormaterServer.parse(date);
-            return dateFormaterConvert.format(NewDate);
+            Date NewDate = dateFormatterServer.parse(date);
+            return dateFormatterConvert.format(NewDate);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -234,7 +234,7 @@ public class Utility {
             double size = Math.sqrt(Math.pow(screenWidth, 2) +
                     Math.pow(screenHeight, 2));
 
-            return size >= 6;
+            return size >= 7;
         } catch (Throwable t) {
             Log.e("LogError", t.toString());
             return false;

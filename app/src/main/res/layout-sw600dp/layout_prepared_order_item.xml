@@ -12,11 +12,11 @@
             name="position"
             type="Integer" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/_5dp"
-        >
+        android:paddingBottom="@dimen/_5dp">
 
         <TextView
             android:id="@+id/tvNewOrderItemName"
@@ -30,6 +30,8 @@
             android:text="@{itemDescriptionVM.getItemName(position)}"
             android:textColor="@color/colorTabItemTextSelected"
             android:textSize="@dimen/_14sp"
+            app:layout_constraintEnd_toStartOf="@+id/tvNewItemOrderCount"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Butter Chicken" />
@@ -38,9 +40,10 @@
             android:id="@+id/tvNewItemOrderCount"
             android:layout_width="@dimen/_30dp"
             android:layout_height="@dimen/_30dp"
+
+            android:layout_marginStart="55dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="40dp"
-
             android:background="@drawable/box_new_order_item_count"
             android:fontFamily="@font/bwnistageo_medium"
             android:gravity="center"
@@ -48,6 +51,8 @@
             android:textColor="@color/colorTabItemTextSelected"
             android:textSize="@dimen/_14sp"
             app:layout_constraintEnd_toStartOf="@+id/tvOrderPrice"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvNewOrderItemName"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -55,29 +60,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="40dp"
+            android:layout_marginEnd="20dp"
             android:fontFamily="@font/bwnistageo_light"
+            android:gravity="start|left"
             android:text="@{itemDescriptionVM.getItemPrice(position)}"
             android:textColor="@color/colorWaiterIdText"
             android:textSize="@dimen/_12sp"
-            android:gravity="center_vertical|start"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvNewItemOrderCount"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="350" />
 
-        <TextView
-            android:id="@+id/tvOrderItemDescription"
+        <include
+            android:id="@+id/layoutOrderCustomization"
+            layout="@layout/layout_order_customization"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="45dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/bwnistageo_regular"
-            android:text="@{itemDescriptionVM.unorderedListOfItemDescription(position)}"
-            android:textSize="@dimen/_14sp"
-            android:visibility="@{TextUtils.isEmpty(itemDescriptionVM.unorderedListOfItemDescription(position)) ? View.GONE : View.VISIBLE }"
+            android:layout_marginTop="15dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvNewOrderItemName"
-            tools:text="dsjkfdskjdsfkjdsf \n dfjkdfkjdsf \n" />
+            app:layout_constraintTop_toBottomOf="@+id/tvNewOrderItemName" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

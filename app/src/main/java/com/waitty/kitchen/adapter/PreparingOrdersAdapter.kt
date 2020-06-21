@@ -7,11 +7,11 @@ import androidx.databinding.DataBindingUtil
 import com.waitty.kitchen.adapter.viewholders.GenericOrderViewHolder
 import com.waitty.kitchen.adapter.viewholders.NewOrderViewHolder
 import com.waitty.kitchen.adapter.viewholders.PreparingOrdersViewHolder
-import com.waitty.kitchen.adapter.viewholders.WKCheckChangeListener
 import com.waitty.kitchen.databinding.CardOrderNewPreparingBinding
 import com.waitty.kitchen.databinding.CardOrderPreparingBinding
 import com.waitty.kitchen.model.OrderDetails
 import com.waitty.kitchen.model.OrderItem
+import com.waitty.kitchen.utility.WKCheckChangeListener
 
 
 class PreparingOrdersAdapter(@LayoutRes private val layoutRes : Int,private val dataList : MutableList<OrderDetails>?) : GenericOrderAdapter<OrderDetails>(dataList){

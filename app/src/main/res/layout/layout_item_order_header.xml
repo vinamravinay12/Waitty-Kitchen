@@ -12,7 +12,7 @@
             type="Integer" />
         <variable
             name="itemClickEvent"
-            type="com.waitty.kitchen.adapter.viewholders.WKCheckChangeListener" />
+            type="com.waitty.kitchen.utility.WKCheckChangeListener" />
 
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
