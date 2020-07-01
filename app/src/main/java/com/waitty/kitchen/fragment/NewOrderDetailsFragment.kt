@@ -111,7 +111,8 @@ class NewOrderDetailsFragment : Fragment(), WKItemClickListener {
     }
 
     private fun handleOrdersFetched(data: Any?, previousListCount: Int) {
-        viewModel?.getOrderListData()?.value = (data as? OrderResponse)?.data
+        viewModel?.setOrdersList((data as? OrderResponse)?.data ?: ArrayList())
+
          showError(false,404,"")
         showNoInvite(viewModel?.getOrderListData()?.value?.size ?:0 == 0)
         if(previousListCount != viewModel?.getOrderListData()?.value?.size ?: 0 && viewModel?.getOrderListData()?.value?.size ?: 0 > 0) showNewInviteIndicator()

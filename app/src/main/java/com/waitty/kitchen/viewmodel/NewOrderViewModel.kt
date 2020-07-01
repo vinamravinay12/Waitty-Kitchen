@@ -15,6 +15,7 @@ import com.waitty.kitchen.model.postdata.GetOrderPostData
 import com.waitty.kitchen.retrofit.API
 import com.waitty.kitchen.retrofit.ApiClient
 import com.waitty.kitchen.retrofit.ApiInterface
+import com.waitty.kitchen.utility.Utility
 import com.waitty.kitchen.utility.WKItemClickListener
 import com.waitty.kitchen.viewmodel.repository.NewOrderRepository
 import java.lang.StringBuilder
@@ -44,6 +45,14 @@ class NewOrderViewModel : ListOrderViewModel() {
 
 
     fun getOrderListData() = newOrderListLiveData
+
+    fun setOrdersList(orders : List<OrderDetails>) {
+
+        val recentOrders = orders.filter { orderDetails -> Utility.isCreatedToday(orderDetails.createdAt) }
+        newOrderListLiveData.value = recentOrders.filter { orderDetails -> Utility.hasOrderItems(orderDetails) }
+    }
+
+
     fun getOrderAdapter() = orderAdapter
 
     fun setSelectedOrderDetails(position: Int){
@@ -53,6 +62,7 @@ class NewOrderViewModel : ListOrderViewModel() {
     public fun getTableId(position: Int): MutableLiveData<String> {
         if (newOrderListLiveData.value.isNullOrEmpty() || newOrderListLiveData.value?.get(position)?.table == null) return tableId
         tableId.value = StringBuilder().append(tableIdPrefix.value).append(" ").append(newOrderListLiveData.value?.get(position)?.table?.name).toString()
+
         return tableId
     }
 

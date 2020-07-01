@@ -99,7 +99,7 @@ class PreparedOrdersFragment : Fragment(),WKItemClickListener {
     }
 
     private fun handleSuccessResponse(data: Any?) {
-        preparedOrdersViewModel?.getPreparedOrdersList()?.value = data as? List<OrderDetails>
+        preparedOrdersViewModel?.setOrdersList((data as? OrderResponse)?.data ?: ArrayList())
         showError(false, 404, "")
         showNoInvite(preparedOrdersViewModel?.getPreparedOrdersList()?.value?.size ?:0 == 0)
         preparedOrdersViewModel?.updateList()

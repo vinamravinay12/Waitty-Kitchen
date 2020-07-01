@@ -59,4 +59,5 @@ public class WaittyConstants {
     public static final String DISPLAY_DATE_TIME_FORMAT = "dd/MM/yyyy hh:mm a";
     public static final String TAG_ORDER_DETAILS=  "OrderDetailsFragment";
     public static final String TAG_SPLASH = "SplashFragment";
+    public static final String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
 }

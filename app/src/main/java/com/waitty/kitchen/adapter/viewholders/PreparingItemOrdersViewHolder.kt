@@ -22,7 +22,7 @@ class PreparingItemOrdersViewHolder(private val viewBinding: LayoutItemOrderHead
         setVariables(variablesMap)
         val map = viewBinding.itemDescriptionVM?.getOptionsMap(item)
         val list = map?.let { viewBinding.itemDescriptionVM?.getAllItemsList(it) }
-        setupRecyclerView(viewBinding.layoutOrderDescription?.rvOrderCustomizationOptions,map,list)
+        setupRecyclerView(viewBinding.layoutOrderDescription.rvOrderCustomizationOptions,map,list)
 
     }
 

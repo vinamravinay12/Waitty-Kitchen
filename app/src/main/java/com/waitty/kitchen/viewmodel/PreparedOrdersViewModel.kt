@@ -12,6 +12,7 @@ import com.waitty.kitchen.model.OrderPreparationStatus
 import com.waitty.kitchen.model.WaittyAPIResponse
 import com.waitty.kitchen.model.postdata.GetOrderPostData
 import com.waitty.kitchen.retrofit.ApiClient
+import com.waitty.kitchen.utility.Utility
 import com.waitty.kitchen.viewmodel.repository.NewOrderRepository
 
 class PreparedOrdersViewModel : ListOrderViewModel(), WKFilterResultListener<OrderDetails> {
@@ -30,6 +31,11 @@ class PreparedOrdersViewModel : ListOrderViewModel(), WKFilterResultListener<Ord
         preparedOrderAdapter = PreparedOrdersAdapter(getViewType(), preparedOrdersList.value?.toMutableList(),this)
     }
 
+
+    fun setOrdersList(orders : List<OrderDetails>) {
+        val recentOrders = orders.filter { orderDetails -> Utility.isCreatedToday(orderDetails.createdAt) }
+        preparedOrdersList.value = recentOrders.filter { orderDetails -> Utility.hasOrderItems(orderDetails) }
+    }
 
     fun getPreparedOrdersList() = preparedOrdersList
 

@@ -124,7 +124,7 @@ class PreparingOrderDetailsListFragment : Fragment(), WKItemClickListener, WKChe
     }
 
     private fun handleOrdersFetched(data: Any?) {
-        preparingOrderViewModel?.getOrderDetailsList()?.value = (data as? OrderResponse)?.data
+        preparingOrderViewModel?.setOrdersList((data as? OrderResponse)?.data ?: ArrayList())
         showError(false, 404, "")
         showNoInvite(preparingOrderViewModel?.getOrderDetailsList()?.value?.size ?: 0 == 0)
         preparingOrderViewModel?.updateList()

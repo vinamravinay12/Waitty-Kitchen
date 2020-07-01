@@ -61,6 +61,11 @@ class PreparingOrdersViewModel : ListOrderViewModel(), ViewInteractionHandler, K
     }
 
 
+    fun setOrdersList(orders : List<OrderDetails>) {
+        val recentOrders = orders.filter { orderDetails -> Utility.isCreatedToday(orderDetails.createdAt) }
+        orderDetailsList.value = recentOrders.filter { orderDetails -> Utility.hasOrderItems(orderDetails) }
+    }
+
     fun setCountdownListener(position: Int, countDownListener: CountDownListener) {
         countdownListenerList.add(position, countDownListener)
     }

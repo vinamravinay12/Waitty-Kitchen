@@ -65,4 +65,5 @@
     <dimen name="_26sp">26sp</dimen>
     <dimen name="_260dp">260dp</dimen>
     <dimen name="_220dp">220dp</dimen>
+    <dimen name="_320dp">320dp</dimen>
 </resources>

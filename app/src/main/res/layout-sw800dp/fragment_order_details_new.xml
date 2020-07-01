@@ -13,7 +13,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:visibility="gone"
-            android:paddingTop="@dimen/_25dp" />
+            android:paddingTop="@dimen/_25dp"
+            android:paddingStart="@dimen/_35dp"
+            android:paddingEnd="@dimen/_35dp"/>
 
         <ImageView
             android:id="@+id/ivNoInvite"

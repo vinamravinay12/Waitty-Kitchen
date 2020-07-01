@@ -25,6 +25,7 @@ import com.google.gson.JsonObject;
 import com.translabtechnologies.visitormanagementsystem.vmshost.database.SharedPreferenceManager;
 import com.waitty.kitchen.R;
 import com.waitty.kitchen.constant.WaittyConstants;
+import com.waitty.kitchen.model.OrderDetails;
 import com.waitty.kitchen.retrofit.API;
 import com.waitty.kitchen.retrofit.ApiClient;
 import com.waitty.kitchen.retrofit.ApiInterface;
@@ -262,5 +263,28 @@ public class Utility {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(displayDateTimeFormat);
         return simpleDateFormat.format(arrivalDate);
     }
+
+
+    public static boolean isCreatedToday(@Nullable String createdAt) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(WaittyConstants.DATE_FORMAT);
+        String formattedCreatedAt = chageUTC_ToLocalDate(WaittyConstants.dateFormaterServer, createdAt, simpleDateFormat);
+        String currentDate = simpleDateFormat.format(Calendar.getInstance().getTime());
+
+
+        try {
+            Date createdAtDate = simpleDateFormat.parse(formattedCreatedAt);
+            Date today = simpleDateFormat.parse(currentDate);
+            return Math.abs(today.getTime() - createdAtDate.getTime()) < 1000*60*60*24;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
+
+    public static boolean hasOrderItems(OrderDetails orderDetails) {
+        return !orderDetails.getOrderItems().isEmpty();
+    }
+
 }// final class ends here
 

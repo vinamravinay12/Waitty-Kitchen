@@ -5,7 +5,7 @@
 
     <data>
         <variable
-            name="newOrderVM"
+            name="listOrderVM"
             type="com.waitty.kitchen.viewmodel.NewOrderViewModel" />
 
         <variable
@@ -22,6 +22,9 @@
         android:layout_height="@dimen/_313dp"
         app:cardCornerRadius="@dimen/_10dp"
         app:cardElevation="@dimen/_3dp"
+        android:layout_marginStart="@dimen/_30dp"
+        android:layout_marginEnd="@dimen/_30dp"
+        android:layout_marginBottom="@dimen/_15dp"
         app:cardBackgroundColor="@color/colorWhite">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -36,7 +39,7 @@
                 android:layout_marginStart="@dimen/_20dp"
                 android:layout_marginTop="@dimen/_10dp"
                 android:fontFamily="@font/bwnistageo_bold"
-                android:text="@{newOrderVM.getTableId(position)}"
+                android:text="@{listOrderVM.getTableId(position)}"
                 android:textColor="@color/colorTabItemTextSelected"
                 android:textSize="@dimen/_40sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +53,7 @@
                 android:layout_marginTop="@dimen/_15dp"
                 android:layout_marginEnd="@dimen/_30dp"
                 android:fontFamily="@font/bwnistageo_black"
-                android:text="@{newOrderVM.getOrderType(position)}"
+                android:text="@{listOrderVM.getOrderType(position)}"
                 android:textColor="@color/colorTabItemTextSelected"
                 android:textSize="@dimen/_16sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +67,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp"
                 android:fontFamily="@font/bwnistageo_regular"
-                android:text="@{newOrderVM.getWaiterDetails(position)}"
+                android:text="@{listOrderVM.getWaiterDetails(position)}"
                 android:textColor="@color/colorWaiterIdText"
                 android:textSize="@dimen/_12sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -84,12 +87,16 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvTableId" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
+                android:id="@+id/rvOrderItems"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="0dp"
+                android:paddingTop="@dimen/_10dp"
+                android:paddingStart="@dimen/_30dp"
+                android:paddingEnd="@dimen/_30dp"
+                android:paddingBottom="@dimen/_10dp"
                 app:layout_constraintBottom_toTopOf="@+id/btStartPreparing"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -109,7 +116,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+                app:layout_constraintTop_toBottomOf="@+id/rvOrderItems" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
