@@ -1,5 +1,6 @@
 package com.waitty.kitchen.adapter.viewholders
 
+import android.view.MotionEvent
 import androidx.databinding.library.baseAdapters.BR
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,10 +18,30 @@ class NewOrderViewHolder(private val viewDataBinding: CardOrderNewPreparingBindi
         val orderItemsRecyclerView = viewDataBinding.rvOrderItems
         variablesMap[BR.position] = position
         setVariables(variablesMap)
-        orderItemsRecyclerView?.layoutManager = LinearLayoutManager(viewDataBinding.root.context, RecyclerView.VERTICAL,false)
-        orderItemsRecyclerView?.setHasFixedSize(true)
-        orderItemsRecyclerView?.adapter = newOrderItemAdapter
+        orderItemsRecyclerView.layoutManager = LinearLayoutManager(viewDataBinding.root.context, RecyclerView.VERTICAL,false)
+        orderItemsRecyclerView.setHasFixedSize(true)
+        orderItemsRecyclerView.adapter = newOrderItemAdapter
+        orderItemsRecyclerView.addOnItemTouchListener(RecylerViewOnTouchListener())
         newOrderItemAdapter.notifyDataSetChanged()
+    }
+
+
+    inner class RecylerViewOnTouchListener : RecyclerView.OnItemTouchListener {
+        override fun onTouchEvent(rv: RecyclerView, e: MotionEvent) {
+            TODO("Not yet implemented")
+        }
+
+        override fun onInterceptTouchEvent(rv: RecyclerView, e: MotionEvent): Boolean {
+            when (e.action) {
+                MotionEvent.ACTION_MOVE -> rv.parent.requestDisallowInterceptTouchEvent(true)
+            }
+            return false
+        }
+
+        override fun onRequestDisallowInterceptTouchEvent(disallowIntercept: Boolean) {
+            TODO("Not yet implemented")
+        }
+
     }
 
 }

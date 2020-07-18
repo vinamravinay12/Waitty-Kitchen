@@ -56,8 +56,8 @@ class NewOrderDetailsFragment : Fragment(), WKItemClickListener {
         super.onActivityCreated(savedInstanceState)
 
         bindingNewOrderDetailsFragment.layoutError.apiErrorVM = apiErrorViewModel
-        bindingNewOrderDetailsFragment.rvNewOrders.layoutManager = if(!Utility.isTablet(context)) LinearLayoutManager(context)
-                                                                    else GridLayoutManager(context,2)
+        bindingNewOrderDetailsFragment.rvNewOrders.layoutManager = if(!Utility.isTablet(context)) LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+                                                                    else GridLayoutManager(context,2, RecyclerView.VERTICAL,false)
 
         bindingNewOrderDetailsFragment.rvNewOrders.setHasFixedSize(true)
         viewModel?.getOrderAdapter()?.setVariablesMap(getVariablesMap())

@@ -235,7 +235,7 @@ public class Utility {
             double size = Math.sqrt(Math.pow(screenWidth, 2) +
                     Math.pow(screenHeight, 2));
 
-            return size >= 7;
+            return size >= 6.5;
         } catch (Throwable t) {
             Log.e("LogError", t.toString());
             return false;

@@ -15,6 +15,7 @@
             type="com.waitty.kitchen.utility.WKCheckChangeListener" />
 
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,12 +24,12 @@
         <include
             android:id="@+id/layout_item_description"
             layout="@layout/layout_item_new_order"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            app:layout_constraintEnd_toStartOf="@+id/cbItemDone"
+            android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
         <CheckBox
             android:id="@+id/cbItemDone"
@@ -36,49 +37,35 @@
             itemChecked="@{itemClickEvent}"
             android:layout_width="@dimen/_90dp"
             android:layout_height="@dimen/_40dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="40dp"
             android:background="@{itemDescriptionVM.isItemReady(position) ? @color/colorBtnStartPreparingGreen : @color/colorBackgroundCheckbox}"
-            android:button="@drawable/ic_check"
-            android:layoutDirection="rtl"
+            android:button="@null"
+            android:drawableEnd="@drawable/ic_check"
+            android:drawableTint="@color/colorWhite"
+            android:buttonTint="@{itemDescriptionVM.isItemReady(position) ? @color/colorWhite : @color/colorTabItemText}"
+            android:gravity="left"
             android:paddingStart="@dimen/_15dp"
             android:paddingTop="@dimen/_10dp"
-            android:paddingEnd="@dimen/_15dp"
+            android:paddingEnd="@dimen/_8dp"
             android:paddingBottom="@dimen/_10dp"
             android:text="@string/txt_done"
-            android:buttonTint="@{itemDescriptionVM.isItemReady(position) ? @color/colorWhite : @color/colorTabItemText}"
             android:textColor="@{itemDescriptionVM.isItemReady(position) ? @color/colorWhite : @color/colorTabItemText}"
             android:textSize="@dimen/_14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:textColor="@color/colorTabItemText"
-            tools:buttonTint="@color/colorTabItemText"
-            tools:background="@color/colorBackgroundCheckbox" />
+            tools:background="@color/colorBtnStartPreparingGreen"
+            tools:textColor="@color/colorTabItemText" />
 
         <include
             android:id="@+id/layoutOrderDescription"
             layout="@layout/layout_order_customization"
             android:layout_width="@dimen/_280dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/_80dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginStart="80dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/layout_item_description" />
-
-        <!--        <TextView-->
-        <!--            android:id="@+id/tvOrderCustomization"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginTop="10dp"-->
-        <!--            android:layout_marginBottom="5dp"-->
-        <!--            android:text="@{itemDescriptionVM.unorderedListOfItemDescription(position)}"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintHorizontal_bias="0.377"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@+id/layout_item_description" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

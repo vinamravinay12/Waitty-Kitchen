@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/_30dp">
+        android:layout_height="wrap_content">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvOrderCustomizationOptions"
-            android:layout_width="@dimen/_220dp"
+            android:layout_width="@dimen/_300dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="45dp"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="@dimen/_20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

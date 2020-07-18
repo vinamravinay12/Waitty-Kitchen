@@ -30,6 +30,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <CheckBox
             android:id="@+id/cbItemDone"
             checkedItem="@{itemDescriptionVM.getOrderItem(position)}"
@@ -39,20 +40,21 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="40dp"
             android:background="@{itemDescriptionVM.isItemReady(position) ? @color/colorBtnStartPreparingGreen : @color/colorBackgroundCheckbox}"
-            android:button="@drawable/ic_check"
+            android:button="@null"
+            android:drawableEnd="@drawable/ic_check"
+            android:drawableTint="@color/colorWhite"
             android:buttonTint="@{itemDescriptionVM.isItemReady(position) ? @color/colorWhite : @color/colorTabItemText}"
             android:gravity="left"
             android:paddingStart="@dimen/_15dp"
             android:paddingTop="@dimen/_10dp"
-            android:paddingEnd="@dimen/_15dp"
+            android:paddingEnd="@dimen/_8dp"
             android:paddingBottom="@dimen/_10dp"
             android:text="@string/txt_done"
             android:textColor="@{itemDescriptionVM.isItemReady(position) ? @color/colorWhite : @color/colorTabItemText}"
             android:textSize="@dimen/_14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:background="@color/colorBackgroundCheckbox"
-            tools:buttonTint="@color/colorTabItemText"
+            tools:background="@color/colorBtnStartPreparingGreen"
             tools:textColor="@color/colorTabItemText" />
 
         <include
@@ -61,24 +63,9 @@
             android:layout_width="@dimen/_350dp"
             android:layout_height="match_parent"
             android:layout_marginStart="140dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/layout_item_description" />
-
-        <!--        <TextView-->
-        <!--            android:id="@+id/tvOrderCustomization"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginTop="10dp"-->
-        <!--            android:layout_marginBottom="5dp"-->
-        <!--            android:text="@{itemDescriptionVM.unorderedListOfItemDescription(position)}"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintHorizontal_bias="0.377"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@+id/layout_item_description" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
